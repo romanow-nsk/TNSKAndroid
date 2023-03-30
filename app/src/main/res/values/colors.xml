@@ -2,9 +2,9 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorESS2Back">#035073</color>
-    <color name="colorESS2Dark">#031033</color>
-    <color name="colorESS2Light">#107093</color>
+    <color name="colorESS2Back">#0380C3</color>
+    <color name="colorESS2Dark">#033053</color>
+    <color name="colorESS2Light">#1090B3</color>
     <color name="colorAccent">#D81B60</color>
     <color name="Black">#000000</color>
     <color name="White">#F0F0F0</color>

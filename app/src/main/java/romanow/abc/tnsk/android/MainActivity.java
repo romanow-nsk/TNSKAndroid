@@ -300,7 +300,7 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
                 saveContext();
                 }
             headerInfo = (TextView) findViewById(R.id.headerInfo);
-            String title = "СНЭЭ-3";
+            String title = "Транспорт NSK";
             putHeaderInfo(title);
             //addToLog(false, title, 22, 0);
             //addToLogButton("Рег.код: "+createRegistrationCode(),true,null,null);
@@ -634,7 +634,7 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
             @Override
             public void onSelect() {
                 log.removeAllViews();
-                String title = "СНЭЭ-3";
+                String title = "Транспорт NSK";
                 addToLog(false, title, 22, 0);
                 }
             });

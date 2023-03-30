@@ -20,7 +20,7 @@ public class MIAbout extends MenuItem {
         main.addMenuList(new MenuItemAction("О программе") {
             @Override
             public void onSelect() {
-                String title ="Клиент СМУ СНЭЭ-3\n";
+                String title ="Клиент Транспорт NSK\n";
                 title+="Версия ядра "+ Values.env().applicationName(ValuesBase.AppNameTitle)+"\n";
                 title+="Разработчик: НГТУ\n";
                 title+="Контакты: romanov@corp.nstu.ru\n";

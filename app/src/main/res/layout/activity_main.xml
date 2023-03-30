@@ -52,7 +52,7 @@
             android:clickable="true"
             android:longClickable="true"
             android:textColor="@color/White"
-            android:textSize="30dp" />
+            android:textSize="20dp" />
         <ImageView
             android:id="@+id/headerMenu"
             android:layout_width="50dp"
@@ -63,7 +63,7 @@
             android:layout_marginRight="5dp"
             android:clickable="true"
             android:longClickable="true"
-            android:src="@drawable/battery3" />
+            android:src="@drawable/busstop" />
         <TextView
             android:id="@+id/headerDeployStateText"
             android:layout_width="100dp"
