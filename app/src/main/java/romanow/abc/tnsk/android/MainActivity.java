@@ -300,7 +300,7 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
                 saveContext();
                 }
             headerInfo = (TextView) findViewById(R.id.headerInfo);
-            String title = "Транспорт NSK";
+            String title = "Транспорт\nНовосибирска";
             putHeaderInfo(title);
             //addToLog(false, title, 22, 0);
             //addToLogButton("Рег.код: "+createRegistrationCode(),true,null,null);
