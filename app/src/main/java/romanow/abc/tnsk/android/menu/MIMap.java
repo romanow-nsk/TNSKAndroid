@@ -5,12 +5,12 @@ import android.content.Intent;
 import java.io.BufferedReader;
 import java.util.ArrayList;
 
+import romanow.abc.tnsk.android.FileDescription;
+import romanow.abc.tnsk.android.FileDescriptionList;
 import romanow.abc.tnsk.android.I_ArchiveMultiSelector;
 import romanow.abc.tnsk.android.MainActivity;
 import romanow.abc.tnsk.android.service.AppData;
-import romanow.abc.tnsk.android.yandexmap.MapFilesActivity;
-import romanow.abc.tnsk.android.FileDescription;
-import romanow.abc.tnsk.android.FileDescriptionList;
+import romanow.abc.tnsk.android.yandexmap.CaresMapActivity;
 
 
 public class MIMap extends MenuItem {
@@ -28,16 +28,16 @@ public class MIMap extends MenuItem {
         @Override
         public void onSelect(FileDescriptionList fd, boolean longClick) {
             try {
-                ArrayList<FileDescription> list = AppData.ctx().getFileList();
+                FileDescriptionList list = AppData.ctx().getFileList();
                 list.clear();
                 for (FileDescription ff : fd){
                     BufferedReader reader = main.openReader(ff.getOriginalFileName());
                     reader.close();
                     if (ff.getGps().gpsValid())
                         list.add(ff);
-                }
+                    }
                 Intent intent = new Intent();
-                intent.setClass(main.getApplicationContext(), MapFilesActivity.class);
+                intent.setClass(main.getApplicationContext(), CaresMapActivity.class);
                 main.startActivity(intent);
             } catch (Exception ee){ main.errorMes(ee.toString());}
         }

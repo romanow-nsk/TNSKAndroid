@@ -10,7 +10,7 @@ import java.io.OutputStreamWriter;
 
 import romanow.abc.core.entity.base.BugList;
 import romanow.abc.core.entity.WorkSettings;
-import romanow.abc.tnsk.android.LoginSettings;
+import romanow.abc.tnsk.android.AppSettings;
 import romanow.abc.tnsk.android.StoryList;
 
 public class FileService {
@@ -94,7 +94,7 @@ public class FileService {
         }
     public void loadContext(){
         AppData ctx = AppData.ctx();
-        ctx.loginSettings((LoginSettings)loadJSON(LoginSettings.class));
+        ctx.loginSettings((AppSettings)loadJSON(AppSettings.class));
         ctx.workSettings((WorkSettings)loadJSON(WorkSettings.class));
         ctx.storyList((StoryList)loadJSON(StoryList.class));
         ctx.fatalMessages((BugList) loadJSON(BugList.class));

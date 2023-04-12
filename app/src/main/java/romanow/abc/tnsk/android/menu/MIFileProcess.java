@@ -5,11 +5,11 @@ import static romanow.abc.tnsk.android.MainActivity.ViewProcHigh;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
+import romanow.abc.tnsk.android.FileDescription;
+import romanow.abc.tnsk.android.FileDescriptionList;
 import romanow.abc.tnsk.android.R;
 import romanow.abc.tnsk.android.I_ArchiveMultiSelector2;
 import romanow.abc.tnsk.android.MainActivity;
-import romanow.abc.tnsk.android.FileDescription;
-import romanow.abc.tnsk.android.FileDescriptionList;
 
 
 public class MIFileProcess extends MIFileBrowser {

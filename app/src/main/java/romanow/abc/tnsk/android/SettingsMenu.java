@@ -16,7 +16,7 @@ public class SettingsMenu extends SettingsMenuBase {
     @Override
     public void createDialog(LinearLayout trmain){
         try {
-            LoginSettings set = AppData.ctx().loginSettings();
+            AppSettings set = AppData.ctx().loginSettings();
             LinearLayout layout = createItem("Mail ", ""+set.getMailToSend(), true,true,new I_EventListener(){
                 @Override
                 public void onEvent(String ss) {
@@ -25,22 +25,22 @@ public class SettingsMenu extends SettingsMenuBase {
                     }
                 });
             trmain.addView(layout);
-            layout = createItem("Отладка", set.isFullInfo() ? "1" : "0" , new I_EventListener(){
+            layout = createItem("АвтоКоннект", set.isAutoConnect() ? "1" : "0" , new I_EventListener(){
                 @Override
                 public void onEvent(String ss) {
                     try {
-                        set.setFullInfo(Integer.parseInt(ss)!=0);
+                        set.setAutoConnect(Integer.parseInt(ss)!=0);
                         settingsChanged();
                     } catch (Exception ee){
                         base.popupInfo("Формат числа");}
                         }
                 });
             trmain.addView(layout);
-            layout = createItem("Режим техника", set.isTechnicianMode() ? "1" : "0" , new I_EventListener(){
+            layout = createItem("Поиск борта (м)", ""+set.getSearchCareDistantion() , new I_EventListener(){
                 @Override
                 public void onEvent(String ss) {
                     try {
-                        set.setTechnicianMode(Integer.parseInt(ss)!=0);
+                        set.setSearchCareDistantion(Integer.parseInt(ss));
                         settingsChanged();
                         base.overLoad(false);
                     } catch (Exception ee){

@@ -1,9 +1,9 @@
 package romanow.abc.tnsk.android;
 
-public class LoginSettings {
+public class AppSettings {
     private String paramListName="...";
     private String mailToSend="romanow@ngs.ru";
-    private String getTitle(){
+    public String getTitle(){
         return paramListName;
     }
     private String dataSetverIP="217.71.138.9";
@@ -17,10 +17,16 @@ public class LoginSettings {
     private String mailBox="romanow@corp.nstu.ru";
     private String mailPass="";
     private String mailSecur="starttls";
-    private boolean fullInfo=false;
+    private boolean autoConnect=false;
     private int mailPort=587;
     private String fatalMessage="";             // Текст фатального сообщения при перезагрузке
     private boolean technicianMode=false;       // Полнофункциональный режим
+    private int searchCareDistantion=1000;      // Радиус поиска бортов
+
+    public int getSearchCareDistantion() {
+        return searchCareDistantion; }
+    public void setSearchCareDistantion(int searchCareDistantion) {
+        this.searchCareDistantion = searchCareDistantion; }
     public boolean isTechnicianMode() {
         return technicianMode; }
     public void setTechnicianMode(boolean technicianMode) {
@@ -77,10 +83,10 @@ public class LoginSettings {
         return mailSecur; }
     public void setMailSecur(String mailSecur) {
         this.mailSecur = mailSecur; }
-    public boolean isFullInfo() {
-        return fullInfo; }
-    public void setFullInfo(boolean fullInfo) {
-        this.fullInfo = fullInfo; }
+    public boolean isAutoConnect() {
+        return autoConnect; }
+    public void setAutoConnect(boolean fullInfo) {
+        this.autoConnect = fullInfo; }
     public int getMailPort() {
         return mailPort; }
     public void setMailPort(int mailPort) {

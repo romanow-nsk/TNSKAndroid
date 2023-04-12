@@ -4,7 +4,7 @@ package romanow.abc.tnsk.android.service;
 import romanow.abc.core.UniException;
 import romanow.abc.core.constants.Values;
 
-public abstract class NetBackDefault implements NetBack {
+public abstract class NetBackDefault<T> implements NetBack<T> {
     public NetBackDefault(){
         }
     @Override
@@ -23,5 +23,5 @@ public abstract class NetBackDefault implements NetBack {
         AppData.ctx().addStoryMessage("Ошибка сети: "+ee.toString());
         AppData.ctx().popupAndLog(true,"Сеть недоступна");
         }
-    public abstract void onSuccess(Object val);
+    public abstract void onSuccess(T val);
 }

@@ -19,7 +19,7 @@ public class RegistrationMenu extends SettingsMenuBase {
     public void createDialog(LinearLayout trmain) {
         ctx = AppData.ctx();
         try {
-            final LoginSettings set = ctx.loginSettings();
+            final AppSettings set = ctx.loginSettings();
             LinearLayout layout = createItem("Код", "", true,true,new I_EventListener(){
                 @Override
                 public void onEvent(String ss) {

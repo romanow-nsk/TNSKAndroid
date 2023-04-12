@@ -29,10 +29,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Comparator;
 
 import romanow.abc.core.I_Notify;
-import romanow.abc.tnsk.android.FileDescription;
 import romanow.abc.tnsk.android.FileDescriptionList;
+import romanow.abc.tnsk.android.FileDescription;
 import romanow.abc.tnsk.android.I_FDComparator;
 import romanow.abc.tnsk.android.R;
 
@@ -263,18 +264,12 @@ public abstract class BaseActivity extends AppCompatActivity implements I_Notify
             if (file.isDirectory())
                 continue;
             FileDescription dd = new FileDescription(ss);
-            if (dd.getFormatError().length()!=0)
-                continue;
-            String zz = dd.validDescription();
-            if (zz.length()!=0){
-                if (trace)
-                    addToLog("Файл: "+ss+"\n"+zz);
-                }
+            addToLog("Файл: "+ss);
             out.add(dd);
             }
-        out.sort(new I_FDComparator() {
+        out.sort(new Comparator<FileDescription>() {
             @Override
-            public int compare(FileDescription o2, FileDescription o1) {
+            public int compare(FileDescription o1, FileDescription o2) {
                 return (int)(o2.getCreateDate().timeInMS() - o1.getCreateDate().timeInMS());
                 }
             });
@@ -299,7 +294,7 @@ public abstract class BaseActivity extends AppCompatActivity implements I_Notify
             if (file.isDirectory())
                 out.add(new FileDescription(ss));
             }
-        out.sort(new I_FDComparator() {
+        out.sort(new Comparator<FileDescription>() {
             @Override
             public int compare(FileDescription o2, FileDescription o1) {
                 return o1.getOriginalFileName().compareTo(o2.getOriginalFileName());

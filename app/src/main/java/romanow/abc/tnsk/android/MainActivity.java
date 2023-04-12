@@ -54,6 +54,7 @@ import romanow.abc.core.entity.baseentityes.JInt;
 import romanow.abc.core.utils.GPSPoint;
 import romanow.abc.core.utils.Pair;
 
+import romanow.abc.tnsk.android.menu.MILogin;
 import romanow.abc.tnsk.android.service.AppData;
 import romanow.abc.tnsk.android.service.Base64Coder;
 import romanow.abc.tnsk.android.service.BaseActivity;
@@ -62,7 +63,6 @@ import romanow.abc.tnsk.android.service.I_GPSService;
 import romanow.abc.tnsk.android.service.NetBack;
 import romanow.abc.tnsk.android.service.NetCall;
 import romanow.abc.tnsk.android.menu.MIAbout;
-import romanow.abc.tnsk.android.menu.MITestCase;
 import romanow.abc.tnsk.android.menu.MenuItemAction;
 
 public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -302,6 +302,8 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
             headerInfo = (TextView) findViewById(R.id.headerInfo);
             String title = "Транспорт\nНовосибирска";
             putHeaderInfo(title);
+            if (ctx.loginSettings().isAutoConnect())
+                MILogin.login(this);
             //addToLog(false, title, 22, 0);
             //addToLogButton("Рег.код: "+createRegistrationCode(),true,null,null);
             //addToLogButton("ID: "+getSoftwareId64(),true,null,null);
@@ -384,8 +386,6 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
         addToLog(fullInfoMes, ss, textSize, textColor, -1);
         }
     public void addToLog(boolean fullInfoMes, final String ss, final int textSize, final int textColor, final int imgRes) {
-        if (fullInfoMes && !ctx.loginSettings().isFullInfo())
-            return;
         guiCall(new Runnable() {
             @Override
             public void run() {
@@ -500,15 +500,10 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
         if (idx!=-1) ss = ss.substring(idx+1);
          */
         FileDescription description = new FileDescription(ss);
-        String out = description.getFormatError();
-        if (out.length() != 0) {
-            addToLog(out);
-            return new Pair(null, null);
-        }
-        addToLog(description.validDescription(), isFullInfo() ? 0 : greatTextSize);
+        addToLog(description.getOriginalFileName(), greatTextSize);
         InputStream is = getContentResolver().openInputStream(uri);
         return new Pair(is, description);
-    }
+        }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -566,7 +561,7 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
         }
 
     //--------------------------------------------------------------------------
-    public DataDescription loadArchive() {
+    public FileDescriptionList loadArchive() {
         try {
             Gson gson = new Gson();
             File ff = new File(ctx.androidFileDirectory());
@@ -575,19 +570,19 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
             }
             String ss = ctx.androidFileDirectory() + "/" + archiveFile;
             InputStreamReader out = new InputStreamReader(new FileInputStream(ss), "UTF-8");
-            DataDescription archive = (DataDescription) gson.fromJson(out, DataDescription.class);
+            FileDescriptionList archive = (FileDescriptionList) gson.fromJson(out, FileDescriptionList.class);
             out.close();
             return archive;
         } catch (Exception ee) {
             errorMes("Ошибка чтения архива:\n" + ee.toString() + "\nСоздан пустой");
             popupInfo("Ошибка чтения архива,создан пустой");
-            DataDescription archive2 = new DataDescription();
+            FileDescriptionList archive2 = new FileDescriptionList();
             saveArchive(archive2);
             return archive2;
         }
     }
 
-    public void saveArchive(DataDescription archive) {
+    public void saveArchive(FileDescriptionList archive) {
         try {
             Gson gson = new Gson();
             File ff = new File(ctx.androidFileDirectory());
@@ -621,15 +616,18 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
 
     public void createMenuList() {
         menuList.clear();
-        //if (isAllEnabled()){
-            menuList.add(new MenuItemAction("Связь с сервером") {
-                @Override
-                public void onSelect() {
-                    new LoginSettingsMenu(MainActivity.this);
+        menuList.add(new MenuItemAction("Связь с сервером") {
+            @Override
+            public void onSelect() {
+                    new MILogin(MainActivity.this);
                 }
-                });
-            //new MIESS2(this);
-        //    }
+            });
+        menuList.add(new MenuItemAction("Поиск борта") {
+            @Override
+            public void onSelect() {
+                new CareSearchMenu(MainActivity.this);
+            }
+            });
         menuList.add(new MenuItemAction("Очистить ленту") {
             @Override
             public void onSelect() {
@@ -674,8 +672,6 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
                     new RegistrationMenu(MainActivity.this);
                 }
                 });
-            if (ctx.loginSettings().isFullInfo())
-                new MITestCase(this);
             }
         menuList.add(new MenuItemAction("Выход") {
             @Override
@@ -903,7 +899,7 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
         ctx.service2(retrofit.create(RestAPI.class));
         }
     public void  sessionOn(){
-        LoginSettings log = ctx.loginSettings();
+        AppSettings log = ctx.loginSettings();
         httpKeepAlive.run();                // Сразу и потом по часам
         ctx.cState(AppData.CStateGreen);
         }

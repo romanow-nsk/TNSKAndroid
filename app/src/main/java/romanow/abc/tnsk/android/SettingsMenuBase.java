@@ -27,6 +27,9 @@ public abstract class SettingsMenuBase {
         return createItem(name,value,false,false,lsn);
         }
     protected LinearLayout createItem(String name, String value, boolean shortSize, boolean textType, final I_EventListener lsn){
+        return createItem(name,value,shortSize,true,null,lsn);
+        }
+    protected LinearLayout createItem(String name, String value, boolean shortSize, boolean textType, final String values[],final I_EventListener lsn){
         LinearLayout xx=(LinearLayout)base.getLayoutInflater().inflate(
                 shortSize ? R.layout.settings_item_short : R.layout.settings_item, null);
         xx.setPadding(5, 5, 5, 5);
@@ -43,8 +46,28 @@ public abstract class SettingsMenuBase {
                 }
             });
         img.setClickable(true);
+        img.setLongClickable(true);
         tt.setInputType(textType ? InputType.TYPE_CLASS_TEXT : (InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL));
         //tt.setInputType(textType ? InputType.TYPE_CLASS_TEXT : InputType.TYPE_CLASS_NUMBER );
+        img.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if (values==null)
+                    return false;
+                new ListBoxDialog(base, values, "", new I_ListBoxListener() {
+                    @Override
+                    public void onSelect(int index) {
+                        tt.setText(values[index]);
+                        lsn.onEvent(values[index]);
+                        }
+                    @Override
+                    public void onLongSelect(int index) {}
+                    @Override
+                    public void onCancel() {}
+                    }).create();
+                return false;
+                }
+            });
         tt.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {

@@ -32,7 +32,7 @@ public class FullScreenGraph extends BaseActivity {
                 bb.setHeight(40);
                 bb.setWidth(150);
                 bb.setPadding(10,0,0,0);
-                bb.setText(ff.getSensor());
+                //bb.setText(ff.getSensor());
                 hd.addView(bb);
                 procArchive(ff);
                 }

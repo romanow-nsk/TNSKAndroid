@@ -24,7 +24,7 @@ public class MailSender{
         face = face0;
         }
     public void sendMail(FileDescription data) throws Exception{
-        LoginSettings ws = AppData.ctx().loginSettings();
+        AppSettings ws = AppData.ctx().loginSettings();
         final String from = ws.getMailBox();
         String username = from.substring(0,from.indexOf("@")-1);
         String host = ws.getMailHost();

@@ -5,11 +5,11 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
+import romanow.abc.tnsk.android.FileDescription;
+import romanow.abc.tnsk.android.FileDescriptionList;
 import romanow.abc.tnsk.android.I_ArchiveMultiSelector2;
 import romanow.abc.tnsk.android.MainActivity;
 import romanow.abc.tnsk.android.service.AppData;
-import romanow.abc.tnsk.android.FileDescription;
-import romanow.abc.tnsk.android.FileDescriptionList;
 
 
 public class MIFileCopy extends MIFileBrowser {

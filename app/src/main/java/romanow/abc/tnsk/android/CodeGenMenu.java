@@ -18,7 +18,7 @@ public class CodeGenMenu extends SettingsMenuBase {
     public void createDialog(LinearLayout trmain) {
         ctx = AppData.ctx();
         try {
-            final LoginSettings set = AppData.ctx().loginSettings();
+            final AppSettings set = AppData.ctx().loginSettings();
             LinearLayout layout = createItem("Свой код", "", false,true,new I_EventListener(){
                 @Override
                 public void onEvent(String zz) {

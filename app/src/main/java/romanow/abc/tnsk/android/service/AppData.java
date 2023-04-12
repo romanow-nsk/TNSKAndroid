@@ -10,7 +10,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import romanow.abc.core.API.RestAPI;
+import romanow.abc.core.constants.ConstValue;
+import romanow.abc.core.constants.Values;
+import romanow.abc.core.entity.EntityRefList;
 import romanow.abc.core.entity.WorkSettings;
+import romanow.abc.core.entity.server.TCare;
 import romanow.abc.tnsk.android.FileDescriptionList;
 import romanow.abc.tnsk.android.R;
 import romanow.abc.core.API.RestAPIBase;
@@ -18,10 +22,9 @@ import romanow.abc.core.API.RestAPIBase;
 import romanow.abc.core.Utils;
 import romanow.abc.core.entity.base.BugList;
 import romanow.abc.core.entity.base.BugMessage;
-import romanow.abc.core.entity.WorkSettings;
 import romanow.abc.core.utils.GPSPoint;
 import romanow.abc.core.utils.OwnDateTime;
-import romanow.abc.tnsk.android.LoginSettings;
+import romanow.abc.tnsk.android.AppSettings;
 import romanow.abc.tnsk.android.StoryList;
 
 public class AppData extends Application {
@@ -102,11 +105,13 @@ public class AppData extends Application {
     private BugList fatalMessages = new BugList();
     private WorkSettings workSettings = new WorkSettings();
     private StoryList storyList = new StoryList();
-    private LoginSettings loginSettings = new LoginSettings();
+    private AppSettings loginSettings = new AppSettings();
     Object appSynch = new Object();
     private RestAPIBase service = null;
     private RestAPI service2 = null;
     //---------------------------------------------------------------------------------
+    private HashMap<Integer, ConstValue> careTypeMap;
+    private EntityRefList<TCare> cares = new EntityRefList<>();
     private int cState = AppData.CStateGray;               // Состояние соединения
     public WorkSettings workSettings(){ return workSettings; }
     public StoryList storyList(){ return storyList; }
@@ -114,7 +119,7 @@ public class AppData extends Application {
     public void workSettings(WorkSettings ws){ workSettings=ws; }
     public void storyList(StoryList ss){ storyList=ss; }
     public void fatalMessages(BugList bb){ fatalMessages=bb; }
-    public void loginSettings(LoginSettings ss){ loginSettings=ss; }
+    public void loginSettings(AppSettings ss){ loginSettings=ss; }
     public synchronized int cState() { return cState; }
     public synchronized void cState(int cState) {
         this.cState = cState;
@@ -128,6 +133,8 @@ public class AppData extends Application {
     private boolean registeredOnServer=false;   //
     //-----------------------------------------------------------------------------
     private AppData(){
+        Values.init();
+        careTypeMap = Values.constMap().getGroupMapByValue("RouteType");
         }
     private static AppData ctx = null;          // ГОРЯЧИЙ РЕСТАРТ - обнулить stopApplication
     public static AppData ctx(){
@@ -147,6 +154,8 @@ public class AppData extends Application {
     private boolean applicationOn = false;              // Приложение работает
     private Context context;
     //-----------------------------------------------------------------------------------
+    public HashMap<Integer, ConstValue> getCareTypeMap() {
+        return careTypeMap; }
     public void setCanSendPopup(boolean canSendPopup) {
         this.canSendPopup = canSendPopup; }
     public boolean isCanSendPopup() {
@@ -175,7 +184,7 @@ public class AppData extends Application {
     public String getActualVersion() { return actualVersion; }
     public void setActualVersion(String actualVersion) { this.actualVersion = actualVersion; }
     public Thread.UncaughtExceptionHandler getUncaughtExceptionHandler() { return oldHandler; }
-    public LoginSettings loginSettings(){ return loginSettings; }
+    public AppSettings loginSettings(){ return loginSettings; }
     public FileService getFileService() { return fileService; }
     public RestAPIBase getService() { return service; }
     public RestAPI getService2() { return service2; }
@@ -184,6 +193,8 @@ public class AppData extends Application {
     public String getCodeGenPassword() { return codeGenPassword; }
     public boolean isRegisteredOnServer() { return registeredOnServer; }
     public void setRegisteredOnServer(boolean registeredOnServer) { this.registeredOnServer = registeredOnServer; }
+    public EntityRefList<TCare> getCares() { return cares; }
+    public void setCares(EntityRefList<TCare> cares) { this.cares = cares; }
 
     @Override
     public void onTerminate() {
@@ -217,6 +228,8 @@ public class AppData extends Application {
     public void sendGPS(GPSPoint gpsPoint){
         Intent intent = new Intent();
         intent.setAction(Event_GPS);
+        intent.putExtra("title","Пассажир");
+        intent.putExtra("drawId",R.drawable.where);
         intent.putExtra("gpsX",gpsPoint.geox());
         intent.putExtra("gpsY",gpsPoint.geoy());
         intent.putExtra("state",gpsPoint.state());

@@ -31,7 +31,7 @@ public class SendMail extends AsyncTask{
         try {
             this.context = context;
             data = fd;
-            final LoginSettings set = AppData.ctx().loginSettings();
+            final AppSettings set = AppData.ctx().loginSettings();
             Properties props = new Properties();
             props.put("mail.smtp.auth", "true");
             props.put("mail.smtp.host", set.getMailHost());
