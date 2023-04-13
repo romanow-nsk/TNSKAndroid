@@ -54,6 +54,8 @@ import romanow.abc.core.entity.baseentityes.JInt;
 import romanow.abc.core.utils.GPSPoint;
 import romanow.abc.core.utils.Pair;
 
+import romanow.abc.tnsk.android.menu.MICareSearch;
+import romanow.abc.tnsk.android.menu.MICareStory;
 import romanow.abc.tnsk.android.menu.MILogin;
 import romanow.abc.tnsk.android.service.AppData;
 import romanow.abc.tnsk.android.service.Base64Coder;
@@ -625,9 +627,15 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
         menuList.add(new MenuItemAction("Поиск борта") {
             @Override
             public void onSelect() {
-                new CareSearchMenu(MainActivity.this);
+                new MICareSearch(MainActivity.this);
             }
             });
+        menuList.add(new MenuItemAction("История борта") {
+            @Override
+            public void onSelect() {
+                new MICareStory(MainActivity.this);
+            }
+        });
         menuList.add(new MenuItemAction("Очистить ленту") {
             @Override
             public void onSelect() {

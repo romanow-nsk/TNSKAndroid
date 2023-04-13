@@ -3,14 +3,13 @@ package romanow.abc.tnsk.android.menu;
 import android.content.Intent;
 
 import java.io.BufferedReader;
-import java.util.ArrayList;
 
 import romanow.abc.tnsk.android.FileDescription;
 import romanow.abc.tnsk.android.FileDescriptionList;
 import romanow.abc.tnsk.android.I_ArchiveMultiSelector;
 import romanow.abc.tnsk.android.MainActivity;
 import romanow.abc.tnsk.android.service.AppData;
-import romanow.abc.tnsk.android.yandexmap.CaresMapActivity;
+import romanow.abc.tnsk.android.yandexmap.TNSKMapActivity;
 
 
 public class MIMap extends MenuItem {
@@ -37,7 +36,7 @@ public class MIMap extends MenuItem {
                         list.add(ff);
                     }
                 Intent intent = new Intent();
-                intent.setClass(main.getApplicationContext(), CaresMapActivity.class);
+                intent.setClass(main.getApplicationContext(), TNSKMapActivity.class);
                 main.startActivity(intent);
             } catch (Exception ee){ main.errorMes(ee.toString());}
         }

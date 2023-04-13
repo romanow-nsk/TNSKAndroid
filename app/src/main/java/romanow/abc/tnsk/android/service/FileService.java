@@ -10,6 +10,7 @@ import java.io.OutputStreamWriter;
 
 import romanow.abc.core.entity.base.BugList;
 import romanow.abc.core.entity.WorkSettings;
+import romanow.abc.core.entity.server.TPassenger;
 import romanow.abc.tnsk.android.AppSettings;
 import romanow.abc.tnsk.android.StoryList;
 
@@ -91,6 +92,7 @@ public class FileService {
         saveJSON(ctx.fatalMessages());
         saveJSON(ctx.storyList());
         saveJSON(ctx.workSettings());
+        saveJSON(ctx.passenger());
         }
     public void loadContext(){
         AppData ctx = AppData.ctx();
@@ -98,6 +100,6 @@ public class FileService {
         ctx.workSettings((WorkSettings)loadJSON(WorkSettings.class));
         ctx.storyList((StoryList)loadJSON(StoryList.class));
         ctx.fatalMessages((BugList) loadJSON(BugList.class));
-    }
-
+        ctx.passenger((TPassenger) loadJSON(TPassenger.class));
+        }
 }

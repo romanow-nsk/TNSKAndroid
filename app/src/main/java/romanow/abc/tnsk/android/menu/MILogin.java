@@ -124,6 +124,7 @@ public class MILogin extends SettingsMenuBase {
                     final AppSettings set = ctx.loginSettings();
                     set.setUserId(user.getOid());
                     set.setSessionToken(user.getSessionToken());
+                    ctx.passenger().setUser(user);
                     base.putHeaderInfo(set.getDataSetverIP()+"\n"+user.shortUserName()+"\n"+user.typeName());
                     new NetCall<DBRequest>().call(base,ctx.getService().workSettings(ctx.loginSettings().getSessionToken()), new NetBackDefault() {
                         @Override

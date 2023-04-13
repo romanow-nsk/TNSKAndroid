@@ -22,7 +22,12 @@ public class AppSettings {
     private String fatalMessage="";             // Текст фатального сообщения при перезагрузке
     private boolean technicianMode=false;       // Полнофункциональный режим
     private int searchCareDistantion=1000;      // Радиус поиска бортов
-
+    private int passengerStoryHours=2;          // Интервал сохранения истории пассажира
+    //--------------------------------------------------------------------------------------------
+    public int getPassengerStoryHours() {
+        return passengerStoryHours; }
+    public void setPassengerStoryHours(int passengerStoryHours) {
+        this.passengerStoryHours = passengerStoryHours; }
     public int getSearchCareDistantion() {
         return searchCareDistantion; }
     public void setSearchCareDistantion(int searchCareDistantion) {

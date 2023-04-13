@@ -14,6 +14,7 @@ import android.os.Handler;
 
 import org.joda.time.DateTime;
 
+import romanow.abc.core.entity.server.TPassengerPoint;
 import romanow.abc.core.utils.GPSPoint;
 import romanow.abc.tnsk.android.MainActivity;
 
@@ -29,7 +30,6 @@ public class GPSService11 implements I_GPSService{
     private Context context;
     private int satCount=0;
     private DateTime lastGPSTime = new DateTime();
-    private AppData ctx;
     private Handler event = new Handler();
     private MainActivity main;
     public void startService(MainActivity main0) {
@@ -88,11 +88,12 @@ public class GPSService11 implements I_GPSService{
                 AppData.ctx().popupAndLog(true,"Установите разрешения GPS");
                 return;
                 }
-            GPSPoint old = lastGPS();
             cL = mLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             if (cL != null){
                 lastGPSGeo = new GPSPoint(cL.getLatitude(),cL.getLongitude(),true,cL.getTime());
                 lastGPSTime = new DateTime();
+                TPassengerPoint point = new TPassengerPoint(lastGPSGeo, cL.hasSpeed() ? cL.getSpeed() : null, cL.hasBearing() ? cL.getBearing() : null);
+                AppData.ctx().passenger().addPassengerPoint(AppData.ctx().loginSettings().getPassengerStoryHours(),point);
                 }
             else
                 lastGPSGeo = new GPSPoint();

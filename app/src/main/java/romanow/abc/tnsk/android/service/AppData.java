@@ -15,6 +15,8 @@ import romanow.abc.core.constants.Values;
 import romanow.abc.core.entity.EntityRefList;
 import romanow.abc.core.entity.WorkSettings;
 import romanow.abc.core.entity.server.TCare;
+import romanow.abc.core.entity.server.TPassenger;
+import romanow.abc.core.entity.server.TPassengerPoint;
 import romanow.abc.tnsk.android.FileDescriptionList;
 import romanow.abc.tnsk.android.R;
 import romanow.abc.core.API.RestAPIBase;
@@ -35,6 +37,7 @@ public class AppData extends Application {
     public final static int PopupMiddleDelay=7;    // Время длинного popup
     public final static int PopupLongDelay=10;     // Время длинного popup
     public final static int CKeepALiveTime=10;     // Интервал времени проверки соединения
+    public final static int MapStartDelay=5;       // Задержка старта карты (чтобы передавать события)
     public final static double ScreenMas=0.9;
     //---------------------------------------------------------------------------------------------
     public final static int CStateGray=0;          // Состояние соединения не определено
@@ -102,17 +105,20 @@ public class AppData extends Application {
     */
     //------------------------------------------------------------------------------
     private boolean canSendPopup=false;
-    private BugList fatalMessages = new BugList();
-    private WorkSettings workSettings = new WorkSettings();
+    private BugList fatalMessages = new BugList();              // Список фатальных ошибок
+    private WorkSettings workSettings = new WorkSettings();     // Параметры от сервера
     private StoryList storyList = new StoryList();
-    private AppSettings loginSettings = new AppSettings();
+    private AppSettings loginSettings = new AppSettings();      // Параметры приложения
+    private TPassenger passenger = new TPassenger();            // Трек пассажира
     Object appSynch = new Object();
-    private RestAPIBase service = null;
-    private RestAPI service2 = null;
+    private RestAPIBase service = null;                         // Основное API
+    private RestAPI service2 = null;                            // API NskGorTrans
+    private HashMap<Integer, ConstValue> careTypeMap;           // Типы ТС
+    private EntityRefList<TCare> cares = new EntityRefList<>(); // Выбранные борта
+    private int cState = AppData.CStateGray;                    // Состояние соединения
     //---------------------------------------------------------------------------------
-    private HashMap<Integer, ConstValue> careTypeMap;
-    private EntityRefList<TCare> cares = new EntityRefList<>();
-    private int cState = AppData.CStateGray;               // Состояние соединения
+    public TPassenger passenger(){ return passenger; }
+    public void passenger(TPassenger passenger1) { passenger = passenger1; }
     public WorkSettings workSettings(){ return workSettings; }
     public StoryList storyList(){ return storyList; }
     public BugList fatalMessages(){ return fatalMessages; }
@@ -229,13 +235,30 @@ public class AppData extends Application {
         Intent intent = new Intent();
         intent.setAction(Event_GPS);
         intent.putExtra("title","Пассажир");
+        intent.putExtra("current",true);
         intent.putExtra("drawId",R.drawable.where);
         intent.putExtra("gpsX",gpsPoint.geox());
         intent.putExtra("gpsY",gpsPoint.geoy());
         intent.putExtra("state",gpsPoint.state());
         context.sendBroadcast(intent);
         }
+    public void sendGPS(GPSPoint gpsPoint, String title, int drawId, boolean moveTo){
+        Intent intent = new Intent();
+        intent.setAction(Event_GPS);
+        intent.putExtra("title",title);
+        intent.putExtra("current",false);
+        intent.putExtra("drawId",drawId);
+        intent.putExtra("gpsX",gpsPoint.geox());
+        intent.putExtra("gpsY",gpsPoint.geoy());
+        intent.putExtra("state",gpsPoint.state());
+        intent.putExtra("moveTo",moveTo);
+        context.sendBroadcast(intent);
+    }
     //-------------------------------------------------------------------------------------
+    public void addPassengetPoint(TPassengerPoint point) {
+        passenger.addPassengerPoint(loginSettings.getPassengerStoryHours(),point);
+        fileService.saveJSON(passenger);
+        }
     public void addBugMessage(String ss) {
         BugMessage bug = new BugMessage(AppData.ctx().loginSettings.getUserId(), new OwnDateTime(), ss);
         while (fatalMessages.size() > StorySize)

@@ -31,6 +31,7 @@ public class SettingsMenu extends SettingsMenuBase {
                     try {
                         set.setAutoConnect(Integer.parseInt(ss)!=0);
                         settingsChanged();
+                        base.overLoad(true);
                     } catch (Exception ee){
                         base.popupInfo("Формат числа");}
                         }
@@ -42,7 +43,17 @@ public class SettingsMenu extends SettingsMenuBase {
                     try {
                         set.setSearchCareDistantion(Integer.parseInt(ss));
                         settingsChanged();
-                        base.overLoad(false);
+                    } catch (Exception ee){
+                        base.popupInfo("Формат числа");}
+                }
+            });
+            trmain.addView(layout);
+            layout = createItem("История gps (час)", ""+set.getPassengerStoryHours() , new I_EventListener(){
+                @Override
+                public void onEvent(String ss) {
+                    try {
+                        set.setPassengerStoryHours(Integer.parseInt(ss));
+                        settingsChanged();
                     } catch (Exception ee){
                         base.popupInfo("Формат числа");}
                 }

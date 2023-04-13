@@ -12,9 +12,22 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c654bf1e-10a9-4828-ac00-c758e0df0b54" name="Default Changelist" comment="fix0">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/taxi.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+    <list default="true" id="c654bf1e-10a9-4828-ac00-c758e0df0b54" name="Default Changelist" comment="Каталог .idea и собственные библиотеки">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MICareStory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/TNSKCore.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/TNSKCore.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/AppSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/AppSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/CareSearchMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MICareSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/SettingsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/SettingsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MILogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MILogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MenuItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/service/AppData.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/service/AppData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/service/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/service/FileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/service/GPSService11.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/service/GPSService11.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/CaresMapActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/TNSKMapActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,11 +115,11 @@
       <recent name="romanow.abc.tnsk" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="romanow.abc.tnsk.android.menu" />
       <recent name="romanow.abc.tnsk.android" />
       <recent name="romanow.abc.ess2.android.service" />
       <recent name="romanow.abc.ess2.android.rendering.view2" />
       <recent name="romanow.abc.ess2.android.menu" />
-      <recent name="me.romanow.lep500.menu" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.TransportNSK.app">
@@ -276,20 +289,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1623228750650</updated>
-    </task>
-    <task id="LOCAL-00091" summary="2.0.13 - Отправка excel">
-      <created>1645528733150</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1645528733150</updated>
-    </task>
-    <task id="LOCAL-00092" summary="fix0">
-      <created>1645533726611</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1645533726612</updated>
     </task>
     <task id="LOCAL-00093" summary="fix0">
       <created>1645533836881</created>
@@ -620,7 +619,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681316742948</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="Каталог .idea и собственные библиотеки">
+      <created>1681354536239</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1681354536239</updated>
+    </task>
+    <task id="LOCAL-00141" summary="Каталог .idea и собственные библиотеки">
+      <created>1681354553752</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1681354553752</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -666,7 +679,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="08 Фатальные ошибки - фиксация" />
     <MESSAGE value="09 Режим техника" />
     <MESSAGE value="09 Уровни сигналов" />
     <MESSAGE value="2.0.10 jar без guava" />
@@ -691,7 +703,8 @@
     <MESSAGE value="10.200.200.70" />
     <MESSAGE value="Внешний вид" />
     <MESSAGE value="fix0" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix0" />
+    <MESSAGE value="Каталог .idea и собственные библиотеки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Каталог .idea и собственные библиотеки" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -827,14 +840,19 @@
           <option name="timeStamp" value="435" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/CaresMapActivity.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="437" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/TNSKMapActivity.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="438" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/CaresMapActivity.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="438" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/TNSKMapActivity.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="441" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MICareSearch.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="444" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

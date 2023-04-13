@@ -8,14 +8,18 @@ import android.os.Bundle;
 
 import romanow.abc.core.entity.EntityRefList;
 import romanow.abc.core.entity.server.TCare;
+import romanow.abc.core.entity.server.TPassenger;
+import romanow.abc.core.entity.server.TPassengerPoint;
 import romanow.abc.core.utils.GPSPoint;
 import romanow.abc.tnsk.android.service.AppData;
 import romanow.abc.tnsk.android.R;
 
-public class CaresMapActivity extends MapActivity340 {
+public class TNSKMapActivity extends MapActivity340 {
     private BroadcastReceiver gpsReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
+            if (intent.getBooleanExtra("current",true))
+                return;
             GPSPoint gps = new GPSPoint();
             int state = intent.getIntExtra("state",GPSPoint.GeoNone);
             String title = intent.getStringExtra("title");
@@ -25,7 +29,8 @@ public class CaresMapActivity extends MapActivity340 {
             gps.setCoord(intent.getDoubleExtra("gpsY",0),
                     intent.getDoubleExtra("gpsX",0),false);
             gps.state(state);
-            paint(title,gps,drawId,false);
+            boolean moveTo = intent.getBooleanExtra("moveTo",false);
+            paint(title,gps,drawId,moveTo);
             }
         };
     @Override
@@ -43,9 +48,5 @@ public class CaresMapActivity extends MapActivity340 {
         super.onCreate(savedInstanceState);
         paintSelf();
         moveToSelf();
-        EntityRefList<TCare> list = AppData.ctx().getCares();
-        for(TCare care : list){
-            paint(care.getTitle(AppData.ctx().getCareTypeMap())+" "+care.lastPoint().getSpeed()+" км/ч",care.lastPoint().getGps(),R.drawable.taxi,true);
-            }
         }
     }
