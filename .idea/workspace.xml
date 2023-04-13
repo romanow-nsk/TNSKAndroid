@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c654bf1e-10a9-4828-ac00-c758e0df0b54" name="Default Changelist" comment="fix0">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/taxi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[YTCY9H7HT879CE69]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="resourceFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1thkXnp0dTDQQwxSpAxPDpH0tlJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="android-custom-viewC:/android-sdk-windows/sources/android-29/android/view/View.java_SELECTED" value="View" />
+    <property name="android-custom-viewC:/android-sdk-windows/sources/android-31/android/view/ViewGroup.java_SELECTED" value="ViewGroup" />
+    <property name="android-custom-viewC:/android-sdk-windows/sources/android-31/android/view/ViewGroup.java_ViewGroup_DIMENSIONS" value="1080&#10;1920" />
+    <property name="android-custom-viewC:/android-sdk-windows/sources/android-31/android/widget/TextView.java_SELECTED" value="TextView" />
+    <property name="android-custom-viewC:/android-sdk-windows/sources/android-31/android/widget/TextView.java_TextView_DIMENSIONS" value="1080&#10;1920" />
+    <property name="android-custom-viewD:/ABC/TNSKAndroid/app/src/main/java/romanow/abc/ess2/android/rendering/view2/BorderTextView.java_BorderedTextView_DIMENSIONS" value="1080&#10;1920" />
+    <property name="android-custom-viewD:/ABC/TNSKAndroid/app/src/main/java/romanow/abc/ess2/android/rendering/view2/BorderTextView.java_SELECTED" value="BorderedTextView" />
+    <property name="android-custom-viewD:/ABC/TNSKAndroid/app/src/main/java/romanow/abc/ess2/android/rendering/view2/BorderedButton.java_BorderedButton_DIMENSIONS" value="1080&#10;1920" />
+    <property name="android-custom-viewD:/ABC/TNSKAndroid/app/src/main/java/romanow/abc/ess2/android/rendering/view2/BorderedButton.java_SELECTED" value="BorderedButton" />
+    <property name="android-custom-viewD:/ABC/TNSKAndroid/app/src/main/java/romanow/abc/ess2/android/rendering/view2/BorderedTextView.java_SELECTED" value="BorderedTextView" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Properties" />
+    <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="romanow.abc.ess2.android" />
+      <recent name="me.romanow.lep500.fft" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\ABC\TNSKAndroid\app\src\main\res\drawable" />
+      <recent name="F:\ABC\TNSKAndroid\app\src\main\res\layout" />
+      <recent name="D:\ABC\TNSKAndroid\app\src\main\res\layout" />
+      <recent name="D:\ABC\TNSKAndroid\app\src\main\res\drawable" />
+      <recent name="D:\ABC\TNSKAndroid\app\src\main\java\romanow\abc\ess2\android\menu" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="romanow.abc.tnsk.android.menu" />
+      <recent name="romanow.abc.tnsk.android.yandexmap" />
+      <recent name="romanow.abc.tnsk.android.service" />
+      <recent name="romanow.abc.tnsk.android" />
+      <recent name="romanow.abc.tnsk" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="romanow.abc.tnsk.android" />
+      <recent name="romanow.abc.ess2.android.service" />
+      <recent name="romanow.abc.ess2.android.rendering.view2" />
+      <recent name="romanow.abc.ess2.android.menu" />
+      <recent name="me.romanow.lep500.menu" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.TransportNSK.app">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransportNSK.app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="TransportNSK.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="TNSKAndroid.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Base64Coder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.romanow.lep500.Base64Coder" />
+      <module name="LEP500.app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.romanow.lep500.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainActivity" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.romanow.lep500.MainActivity" />
+      <module name="LEP500.app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.romanow.lep500.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainActivity" />
+        <item itemvalue="Application.Base64Coder" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c654bf1e-10a9-4828-ac00-c758e0df0b54" name="Default Changelist" comment="" />
+      <created>1623228750650</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623228750650</updated>
+    </task>
+    <task id="LOCAL-00091" summary="2.0.13 - Отправка excel">
+      <created>1645528733150</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1645528733150</updated>
+    </task>
+    <task id="LOCAL-00092" summary="fix0">
+      <created>1645533726611</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1645533726612</updated>
+    </task>
+    <task id="LOCAL-00093" summary="fix0">
+      <created>1645533836881</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1645533836881</updated>
+    </task>
+    <task id="LOCAL-00094" summary="fix0">
+      <created>1645546940715</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1645546940715</updated>
+    </task>
+    <task id="LOCAL-00095" summary="fix0">
+      <created>1645555846746</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1645555846746</updated>
+    </task>
+    <task id="LOCAL-00096" summary="fix0">
+      <created>1645600454054</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1645600454054</updated>
+    </task>
+    <task id="LOCAL-00097" summary="fix0">
+      <created>1645600751893</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1645600751893</updated>
+    </task>
+    <task id="LOCAL-00098" summary="fix0">
+      <created>1645603836155</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1645603836155</updated>
+    </task>
+    <task id="LOCAL-00099" summary="fix0">
+      <created>1645607007794</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1645607007794</updated>
+    </task>
+    <task id="LOCAL-00100" summary="fix0">
+      <created>1645608912520</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1645608912520</updated>
+    </task>
+    <task id="LOCAL-00101" summary="Загрузка архитектуры">
+      <created>1645641757933</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1645641757935</updated>
+    </task>
+    <task id="LOCAL-00102" summary="Загрузка архитектуры">
+      <created>1645644252407</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1645644252407</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Сеть не в потоке?????">
+      <created>1645681105547</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1645681105548</updated>
+    </task>
+    <task id="LOCAL-00104" summary="Сеть не в потоке?????">
+      <created>1645724498648</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1645724498649</updated>
+    </task>
+    <task id="LOCAL-00105" summary="Скрипты">
+      <created>1645758357828</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1645758357829</updated>
+    </task>
+    <task id="LOCAL-00106" summary="Рендеринг">
+      <created>1645778794952</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1645778794952</updated>
+    </task>
+    <task id="LOCAL-00107" summary="Рендеринг">
+      <created>1645809296502</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1645809296503</updated>
+    </task>
+    <task id="LOCAL-00108" summary="Рендеринг">
+      <created>1645813748760</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1645813748760</updated>
+    </task>
+    <task id="LOCAL-00109" summary="Рендеринг">
+      <created>1645870961907</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1645870961908</updated>
+    </task>
+    <task id="LOCAL-00110" summary="Рендеринг">
+      <created>1645885127264</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1645885127264</updated>
+    </task>
+    <task id="LOCAL-00111" summary="Рендеринг">
+      <created>1645949453116</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1645949453117</updated>
+    </task>
+    <task id="LOCAL-00112" summary="Асинхронное чтение регистров (отдельное)">
+      <created>1645956799280</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1645956799281</updated>
+    </task>
+    <task id="LOCAL-00113" summary="Выполнение скриптов GUI в потоке (для функций скриптов)">
+      <created>1645972005888</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1645972005888</updated>
+    </task>
+    <task id="LOCAL-00114" summary="Элементы ЧМИ">
+      <created>1645973920310</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1645973920310</updated>
+    </task>
+    <task id="LOCAL-00115" summary="Элементы ЧМИ">
+      <created>1645981224756</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1645981224756</updated>
+    </task>
+    <task id="LOCAL-00116" summary="Элементы ЧМИ">
+      <created>1645987377504</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1645987377505</updated>
+    </task>
+    <task id="LOCAL-00117" summary="GPS и popup">
+      <created>1646107339982</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1646107339983</updated>
+    </task>
+    <task id="LOCAL-00118" summary="GPS и popup">
+      <created>1646112481698</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1646112481698</updated>
+    </task>
+    <task id="LOCAL-00119" summary="GPS и popup">
+      <created>1646665619549</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1646665619549</updated>
+    </task>
+    <task id="LOCAL-00120" summary="TNSKCore_jar.jar 060">
+      <created>1648292547629</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1648292547630</updated>
+    </task>
+    <task id="LOCAL-00121" summary="217.71.138.13">
+      <created>1648293219020</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1648293219020</updated>
+    </task>
+    <task id="LOCAL-00122" summary="Размер поля рендеринга + скролл">
+      <created>1648311293553</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1648311293554</updated>
+    </task>
+    <task id="LOCAL-00123" summary="Размер поля рендеринга + скролл">
+      <created>1648312696585</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1648312696588</updated>
+    </task>
+    <task id="LOCAL-00124" summary="Размер поля рендеринга + скролл">
+      <created>1650043626586</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1650043626587</updated>
+    </task>
+    <task id="LOCAL-00125" summary="Рефакторинг API">
+      <created>1665242359880</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1665242359881</updated>
+    </task>
+    <task id="LOCAL-00126" summary="Рефакторинг API">
+      <created>1665246554748</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1665246554748</updated>
+    </task>
+    <task id="LOCAL-00127" summary="Ошибка параллеьного чтения. Lenovo wifi">
+      <created>1669399462500</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1669399462501</updated>
+    </task>
+    <task id="LOCAL-00128" summary="СНЭЭ 3.0">
+      <created>1675533015941</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1675533015942</updated>
+    </task>
+    <task id="LOCAL-00129" summary="СНЭЭ 3.0">
+      <created>1675596444646</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1675596444646</updated>
+    </task>
+    <task id="LOCAL-00130" summary="СНЭЭ 3.0">
+      <created>1675615247619</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1675615247619</updated>
+    </task>
+    <task id="LOCAL-00131" summary="СНЭЭ 3.0">
+      <created>1675699864348</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1675699864348</updated>
+    </task>
+    <task id="LOCAL-00132" summary="СНЭЭ 3.0">
+      <created>1675705540679</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1675705540679</updated>
+    </task>
+    <task id="LOCAL-00133" summary="СНЭЭ 3.0">
+      <created>1675706918892</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1675706918892</updated>
+    </task>
+    <task id="LOCAL-00134" summary="СНЭЭ 3.0">
+      <created>1675769819919</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1675769819920</updated>
+    </task>
+    <task id="LOCAL-00135" summary="События">
+      <created>1675779843900</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1675779843900</updated>
+    </task>
+    <task id="LOCAL-00136" summary="10.200.200.70">
+      <created>1675785007943</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1675785007943</updated>
+    </task>
+    <task id="LOCAL-00137" summary="Внешний вид">
+      <created>1675851389756</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1675851389756</updated>
+    </task>
+    <task id="LOCAL-00138" summary="fix0">
+      <created>1680197084846</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1680197084846</updated>
+    </task>
+    <task id="LOCAL-00139" summary="fix0">
+      <created>1681316742947</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1681316742948</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="5419a9d8-eca5-4902-a3d5-bff97593b8be">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:D:/ABC/TNSKAndroid/app/src/main/res/layout" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="5419a9d8-eca5-4902-a3d5-bff97593b8be" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="08 Фатальные ошибки - фиксация" />
+    <MESSAGE value="09 Режим техника" />
+    <MESSAGE value="09 Уровни сигналов" />
+    <MESSAGE value="2.0.10 jar без guava" />
+    <MESSAGE value="2.0.11 Косячок с permissions" />
+    <MESSAGE value="2.0.12 - режим техника" />
+    <MESSAGE value="2.0.13 - Отправка excel" />
+    <MESSAGE value="Загрузка архитектуры" />
+    <MESSAGE value="Сеть не в потоке?????" />
+    <MESSAGE value="Скрипты" />
+    <MESSAGE value="Рендеринг" />
+    <MESSAGE value="Асинхронное чтение регистров (отдельное)" />
+    <MESSAGE value="Выполнение скриптов GUI в потоке (для функций скриптов)" />
+    <MESSAGE value="Элементы ЧМИ" />
+    <MESSAGE value="GPS и popup" />
+    <MESSAGE value="TNSKCore_jar.jar 060" />
+    <MESSAGE value="217.71.138.13" />
+    <MESSAGE value="Размер поля рендеринга + скролл" />
+    <MESSAGE value="Рефакторинг API" />
+    <MESSAGE value="Ошибка параллеьного чтения. Lenovo wifi" />
+    <MESSAGE value="СНЭЭ 3.0" />
+    <MESSAGE value="События" />
+    <MESSAGE value="10.200.200.70" />
+    <MESSAGE value="Внешний вид" />
+    <MESSAGE value="fix0" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix0" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/SettingsMenu.java</url>
+          <line>281</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/SettingsMenu.java</url>
+          <line>284</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/yandexmap/MapFilesActivity.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/fft/FFTHarmonic.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/fft/FFTHarmonic.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/menu/MIFileProcess.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/fft/FFTStatistic.java</url>
+          <line>189</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/menu/MIDownLoad.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="154" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/menu/MITestSignal.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="175" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/RegistrationMenu.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="209" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/CodeGenMenu.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="210" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/menu/MIAudioRecord.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="212" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/menu/MIAudioRecord.java</url>
+          <line>92</line>
+          <option name="timeStamp" value="213" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/RegistrationMenu.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="216" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/FullScreenWave.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="232" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/service/BaseActivity.java</url>
+          <line>211</line>
+          <option name="timeStamp" value="240" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/FFTAdapter.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="244" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>jar://$PROJECT_DIR$/app/libs/LEP500Core.jar!/romanow/lep500/fft/FFTStatistic.class</url>
+          <line>66</line>
+          <option name="timeStamp" value="245" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/LoginSettingsMenu.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="246" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/MainActivity.java</url>
+          <line>240</line>
+          <option name="timeStamp" value="248" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/me/romanow/lep500/MainActivity.java</url>
+          <line>203</line>
+          <option name="timeStamp" value="249" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/ess2/android/rendering/View2Base.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="386" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/ess2/android/rendering/View2Base.java</url>
+          <line>99</line>
+          <option name="timeStamp" value="387" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/service/BaseActivity.java</url>
+          <line>199</line>
+          <option name="timeStamp" value="400" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/ess2/android/rendering/view2/DesktopGUI2StateBox.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="424" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/service/NetCall.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="435" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/CaresMapActivity.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="437" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/CaresMapActivity.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="438" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

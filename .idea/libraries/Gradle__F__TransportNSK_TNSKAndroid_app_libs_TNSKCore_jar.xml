@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: F./TransportNSK/TNSKAndroid/app/libs/TNSKCore.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/TNSKCore.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
