@@ -57,10 +57,11 @@ import romanow.abc.core.utils.Pair;
 import romanow.abc.tnsk.android.menu.MICareSearch;
 import romanow.abc.tnsk.android.menu.MICareStory;
 import romanow.abc.tnsk.android.menu.MILogin;
+import romanow.abc.tnsk.android.menu.MIPassenger;
 import romanow.abc.tnsk.android.service.AppData;
 import romanow.abc.tnsk.android.service.Base64Coder;
 import romanow.abc.tnsk.android.service.BaseActivity;
-import romanow.abc.tnsk.android.service.GPSService11;
+import romanow.abc.tnsk.android.service.GPSService;
 import romanow.abc.tnsk.android.service.I_GPSService;
 import romanow.abc.tnsk.android.service.NetBack;
 import romanow.abc.tnsk.android.service.NetCall;
@@ -258,7 +259,7 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
             ctx.fileService().loadContext();
             ctx.cState(AppData.CStateGray);
             createMenuList();
-            gpsService = new GPSService11();
+            gpsService = new GPSService();
             gpsService.startService(this);
             if (!isLocationEnabled()) {
                 errorMes(EmoSet, " Включить \"Местоположение\" в настройках");
@@ -624,7 +625,7 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
                     new MILogin(MainActivity.this);
                 }
             });
-        menuList.add(new MenuItemAction("Поиск борта") {
+        menuList.add(new MenuItemAction("Ближайшие на карте") {
             @Override
             public void onSelect() {
                 new MICareSearch(MainActivity.this);
@@ -635,7 +636,13 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
             public void onSelect() {
                 new MICareStory(MainActivity.this);
             }
-        });
+            });
+        menuList.add(new MenuItemAction("Привязка к пассажиру") {
+            @Override
+            public void onSelect() {
+                new MIPassenger(MainActivity.this);
+            }
+            });
         menuList.add(new MenuItemAction("Очистить ленту") {
             @Override
             public void onSelect() {

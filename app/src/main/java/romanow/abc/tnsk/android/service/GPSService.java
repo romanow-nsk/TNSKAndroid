@@ -5,8 +5,7 @@ import static androidx.core.content.ContextCompat.checkSelfPermission;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.location.GpsSatellite;
-import android.location.GpsStatus;
+import android.location.GnssStatus;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -15,8 +14,7 @@ import android.os.Handler;
 
 import org.joda.time.DateTime;
 
-import java.util.Iterator;
-
+import romanow.abc.core.entity.server.TPassengerPoint;
 import romanow.abc.core.utils.GPSPoint;
 import romanow.abc.tnsk.android.MainActivity;
 
@@ -26,47 +24,39 @@ public class GPSService implements I_GPSService{
     public final static int GPSValidDelay = 10;               // Интервал валидности GPS (мин)
     private boolean gpsOn = false;
     private LocationManager mLocationManager = null;
+    GnssStatus.Callback mGnssStatusCallback;
     private GPSPoint lastGPSGeo = new GPSPoint();
     private GPSPoint lastGPSNet = new GPSPoint();
     private Context context;
     private int satCount=0;
     private DateTime lastGPSTime = new DateTime();
-    private AppData ctx;
     private Handler event = new Handler();
     private MainActivity main;
-    public GPSService() {}
     public void startService(MainActivity main0) {
         main = main0;
         context = main;
         mLocationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         if (mLocationManager == null) {
-            AppData.ctx().popupAndLog(true,"Недоступен менеджер местоположения/навигации");
-        } else {
-            try {
-                if (checkSelfPermission(context,Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                        && checkSelfPermission(context,Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    Activity#requestPermissions
-                    AppData.ctx().popupAndLog(true,"Установите разрешения GPS");
-                    return;
-                    }
-                mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, GPSInterval * 1000, GPSDistance, locationListener);
-                mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, GPSInterval * 1000, GPSDistance, locationListener);
-                main.setDelay(GPSInterval, gpsClock);
-                gpsOn = true;
-            } catch (Exception ee) {
-                AppData.ctx().popupAndLog(true,"Ошибка GPS-сервиса: " + ee.toString());
+            AppData.ctx().popupAndLog(true, "Недоступен менеджер местоположения/навигации");
+            return;
             }
-        }
-    }
-
+        mGnssStatusCallback = new GnssStatus.Callback() {};
+        try {
+            mLocationManager.registerGnssStatusCallback(mGnssStatusCallback);
+            mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, GPSInterval*1000, 0, locationListener);
+            main.setDelay(GPSInterval, gpsClock);
+            gpsOn = true;
+            } catch (Exception ee) {
+                AppData.ctx().popupAndLog(true, "Ошибка GPS-сервиса: " + ee.toString());
+                }
+            }
     public void stopService() {
         gpsOn = false;
-        main.cancelDelay(gpsClock);
         if (mLocationManager != null)
             mLocationManager.removeUpdates(locationListener);
+        mLocationManager.unregisterGnssStatusCallback(mGnssStatusCallback);
         mLocationManager = null;
-    }
+        }
 
     public GPSPoint lastGPS() {
         GPSPoint notValid = new GPSPoint();
@@ -76,74 +66,72 @@ public class GPSService implements I_GPSService{
         if (lastGPSGeo.gpsValid() && delay  <GPSValidDelay)
             return lastGPSGeo;
         return lastGPSNet;          //38 - если нет от сети
-    }
+        }
 
     Runnable gpsClock = new Runnable() {
         public void run() {
-            try {
-                if (mLocationManager == null) {
-                    main.setDelay(GPSInterval, gpsClock);
-                    return;
-                    }
+            procLocation(null);
+            if (gpsOn)
+                main.setDelay(GPSInterval,gpsClock);
+                }
+            };
+
+    public void procLocation(Location loc) {
+        try {
+            if (mLocationManager == null) {
+                return;
+                }
                 Location cL;
-                if (checkSelfPermission(context,Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    Activity#requestPermissions
-                    AppData.ctx().popupAndLog(true,"Установите разрешения GPS");
-                    return;
-                    }
-                GpsStatus status = mLocationManager.getGpsStatus(null);
-                Iterable<GpsSatellite> satellites = status.getSatellites();
-                Iterator<GpsSatellite> satI = satellites.iterator();
-                while (satI.hasNext()) {
-                    GpsSatellite satellite = satI.next();
-                    float ff = satellite.getSnr();
-                    satCount++;
-                    }
-                GPSPoint old = lastGPS();
-                cL = mLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                if (cL != null){
-                    lastGPSGeo = new GPSPoint(cL.getLatitude(),cL.getLongitude(),true,cL.getTime());
-                    lastGPSTime = new DateTime();
-                    }
-                else
-                    lastGPSGeo = new GPSPoint();
-                cL= mLocationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-                if (cL==null)
-                    lastGPSNet = new GPSPoint();
-                else{
-                    lastGPSNet = new GPSPoint(cL.getLatitude(),cL.getLongitude(),false,cL.getTime());
-                    lastGPSTime = new DateTime();
-                    }
-                //if (lastGPS().state()!=old.state())
-                GPSPoint gpsPoint = lastGPS();
-                AppData.ctx().sendGPS(gpsPoint);
-                AppData.ctx().setLastGPS(gpsPoint);
-                if (gpsOn)
-                    main.setDelay(GPSInterval,gpsClock);
-                    }
+            if (checkSelfPermission(context,Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    Activity#requestPermissions
+                AppData.ctx().popupAndLog(true,"Установите разрешения GPS");
+                return;
+                }
+            cL = mLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            if (cL != null){
+                lastGPSGeo = new GPSPoint(cL.getLatitude(),cL.getLongitude(),true,cL.getTime());
+                lastGPSTime = new DateTime();
+                TPassengerPoint point = new TPassengerPoint(lastGPSGeo, cL.hasSpeed() ? cL.getSpeed() : null, cL.hasBearing() ? cL.getBearing() : null);
+                AppData.ctx().passenger().addPassengerPoint(AppData.ctx().loginSettings().getPassengerStoryHours(),point);
+                }
+            else
+                lastGPSGeo = new GPSPoint();
+            cL= mLocationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+            if (cL==null)
+                lastGPSNet = new GPSPoint();
+            else{
+                lastGPSNet = new GPSPoint(cL.getLatitude(),cL.getLongitude(),false,cL.getTime());
+                lastGPSTime = new DateTime();
+                }
+            GPSPoint gpsPoint = lastGPS();
+            AppData.ctx().sendGPS(gpsPoint);
+            AppData.ctx().setLastGPS(gpsPoint);
+            }
             catch(Throwable ee){
                 AppData.ctx().popupAndLog(true,"Ошибка GPS-сервиса: "+ee.toString());
                 stopService();
-            }
-        }};
-    private LocationListener locationListener = new LocationListener() {
+                }
+        }
+
+        private LocationListener locationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
-            int v=0;
+            //main.addToLog(location.toString());
+            procLocation(location);
             }
         @Override
         public void onStatusChanged(String provider, int status, Bundle extras) {
-            int v=0;
-        }
+           //main.addToLog(provider+" "+status);
+            }
         @Override
         public void onProviderEnabled(String provider) {
-            int v=0;
-        }
+            main.addToLog(provider+" enabled");
+            }
         @Override
         public void onProviderDisabled(String provider) {
-           int v=0;
-        }
-    };
+            main.addToLog(provider+" disabled");
+            }
+        };
 
 }

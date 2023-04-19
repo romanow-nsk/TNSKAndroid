@@ -2,10 +2,10 @@ package romanow.abc.tnsk.android.menu;
 
 import java.util.ArrayList;
 
+import romanow.abc.core.ErrorList;
 import romanow.abc.core.entity.EntityRefList;
 import romanow.abc.core.entity.server.TCare;
 import romanow.abc.core.entity.server.TCarePoint;
-import romanow.abc.core.entity.server.TPassenger;
 import romanow.abc.core.entity.server.TPassengerPoint;
 import romanow.abc.core.utils.GPSPoint;
 import romanow.abc.tnsk.android.AppSettings;
@@ -17,9 +17,9 @@ import romanow.abc.tnsk.android.service.AppData;
 import romanow.abc.tnsk.android.service.NetBackDefault;
 import romanow.abc.tnsk.android.service.NetCall;
 
-public class MICareStory extends MenuItem {
+public class MIPassenger extends MenuItem {
     private AppData ctx;
-    public MICareStory(MainActivity base){
+    public MIPassenger(MainActivity base){
         super(base);
         ctx = AppData.ctx();
         AppSettings set = ctx.loginSettings();
@@ -66,18 +66,13 @@ public class MICareStory extends MenuItem {
             new NetCall<TCare>().call(main,ctx.getService2().getCareStory(set.getSessionToken(),care.getCareKey()), new NetBackDefault<TCare>(){
                 @Override
                 public void onSuccess(final TCare care1) {
-                    startMap(new Runnable() {
-                        @Override
-                        public void run() {
-                            int idx=1;
-                            int size= care1.getCareStory().size();
-                            for(TCarePoint point : care1.getCareStory()){
-                                ctx.sendGPS(point.getGps(),care.getTitle(AppData.ctx().getCareTypeMap())+" "+point.getSpeed()+" км/ч",
-                                        idx==size ? R.drawable.taxi : R.drawable.where, idx==size);
-                                idx++;
-                                }
-                            }
-                        });
+                    ArrayList<TPassengerPoint> list = ctx.passenger().getPassengerStory();
+                    if (list.size()==0) {
+                        main.popupAndLog("Нет истории парражира");
+                        return;
+                        }
+                    ErrorList errors = care1.searchInRoute(list.get(list.size()-1),540,100);
+                    main.addToLog(errors.toString());
                     }
                 });
             }
