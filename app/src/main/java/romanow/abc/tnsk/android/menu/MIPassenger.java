@@ -3,6 +3,7 @@ package romanow.abc.tnsk.android.menu;
 import java.util.ArrayList;
 
 import romanow.abc.core.ErrorList;
+import romanow.abc.core.constants.Values;
 import romanow.abc.core.entity.EntityRefList;
 import romanow.abc.core.entity.server.TCare;
 import romanow.abc.core.entity.server.TCarePoint;
@@ -71,8 +72,15 @@ public class MIPassenger extends MenuItem {
                         main.popupAndLog("Нет истории парражира");
                         return;
                         }
-                    ErrorList errors = care1.searchInRoute(list.get(list.size()-1),540,100);
-                    main.addToLog(errors.toString());
+                    ErrorList fin = new ErrorList();
+                    for(TPassengerPoint point : list){
+                        int state = point.getState();
+                        if (state==Values.PPStateNone || state==Values.PPStateContinue){
+                            ErrorList errors = care1.searchInRoute(point,540,100);
+                            fin.addError(errors);
+                            }
+                        }
+                    main.addToLog(fin.toString());
                     }
                 });
             }

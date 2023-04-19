@@ -12,15 +12,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c654bf1e-10a9-4828-ac00-c758e0df0b54" name="Default Changelist" comment="История борта">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIPassenger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/service/GPSServiceOld.java" afterDir="false" />
+    <list default="true" id="c654bf1e-10a9-4828-ac00-c758e0df0b54" name="Default Changelist" comment="Привязка пассажира">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/libs/TNSKCore.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/TNSKCore.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MICareStory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MICareStory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/service/GPSService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/service/GPSService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/service/GPSService11.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIPassenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIPassenger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,13 +276,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1623228750650</updated>
-    </task>
-    <task id="LOCAL-00095" summary="fix0">
-      <created>1645555846746</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1645555846746</updated>
     </task>
     <task id="LOCAL-00096" summary="fix0">
       <created>1645600454054</created>
@@ -626,7 +613,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681651822275</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <task id="LOCAL-00144" summary="Привязка пассажира">
+      <created>1681900298356</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1681900298357</updated>
+    </task>
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -672,7 +666,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="09 Уровни сигналов" />
     <MESSAGE value="2.0.10 jar без guava" />
     <MESSAGE value="2.0.11 Косячок с permissions" />
     <MESSAGE value="2.0.12 - режим техника" />
@@ -697,7 +690,8 @@
     <MESSAGE value="fix0" />
     <MESSAGE value="Каталог .idea и собственные библиотеки" />
     <MESSAGE value="История борта" />
-    <option name="LAST_COMMIT_MESSAGE" value="История борта" />
+    <MESSAGE value="Привязка пассажира" />
+    <option name="LAST_COMMIT_MESSAGE" value="Привязка пассажира" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -834,8 +828,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIPassenger.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="445" />
+          <line>82</line>
+          <option name="timeStamp" value="449" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
