@@ -67,20 +67,15 @@ public class MIPassenger extends MenuItem {
             new NetCall<TCare>().call(main,ctx.getService2().getCareStory(set.getSessionToken(),care.getCareKey()), new NetBackDefault<TCare>(){
                 @Override
                 public void onSuccess(final TCare care1) {
-                    ArrayList<TPassengerPoint> list = ctx.passenger().getPassengerStory();
-                    if (list.size()==0) {
-                        main.popupAndLog("Нет истории парражира");
-                        return;
-                        }
-                    ErrorList fin = new ErrorList();
-                    for(TPassengerPoint point : list){
-                        int state = point.getState();
-                        if (state==Values.PPStateNone || state==Values.PPStateContinue){
-                            ErrorList errors = care1.searchInRoute(point,540,100);
-                            fin.addError(errors);
-                            }
-                        }
+                    ErrorList fin = care.searchInRoute2(ctx.passenger(),set.getRouteDistance(),set.getCarePassDistance(),set.getSpeedDiff(),set.getSpeedMax());
                     main.addToLog(fin.toString());
+                    main.addToLog(ctx.passenger().getRouteInfo().toString());
+                    startMap(new Runnable() {
+                        @Override
+                        public void run() {
+                            ctx.sendGPSMode(AppData.GPSModePassenger,"",0);
+                            }
+                        });
                     }
                 });
             }

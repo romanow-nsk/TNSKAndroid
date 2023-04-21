@@ -72,8 +72,8 @@ public class MICareStory extends MenuItem {
                             int idx=1;
                             int size= care1.getCareStory().size();
                             for(TCarePoint point : care1.getCareStory()){
-                                ctx.sendGPS(point.getGps(),care.getTitle(AppData.ctx().getCareTypeMap())+" "+point.getSpeed()+" км/ч",
-                                        idx==size ? R.drawable.taxi : R.drawable.where, idx==size);
+                                ctx.sendGPS(point.getGps(),care.getTitle(AppData.ctx().getCareTypeMap())+" "+point.getSpeed()+" км/ч "+point.getGps().geoTime().timeToString(),
+                                        idx==size ? R.drawable.taxi_min : R.drawable.where, idx==size);
                                 idx++;
                                 }
                             }

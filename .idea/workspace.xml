@@ -13,8 +13,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c654bf1e-10a9-4828-ac00-c758e0df0b54" name="Default Changelist" comment="Привязка пассажира">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIRoutes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/TNSKCore.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/TNSKCore.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/AppSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/AppSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/SettingsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/SettingsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MICareSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MICareSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MICareStory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MICareStory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIPassenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIPassenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/service/AppData.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/service/AppData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/MapActivity340.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/MapActivityBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/TNSKMapActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/TNSKMapActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,13 +286,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1623228750650</updated>
-    </task>
-    <task id="LOCAL-00096" summary="fix0">
-      <created>1645600454054</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1645600454054</updated>
     </task>
     <task id="LOCAL-00097" summary="fix0">
       <created>1645600751893</created>
@@ -620,7 +623,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681900298357</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="Привязка пассажира">
+      <created>1681906218459</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1681906218459</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -822,14 +832,9 @@
           <option name="timeStamp" value="424" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MICareSearch.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="444" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIPassenger.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="449" />
+          <line>71</line>
+          <option name="timeStamp" value="450" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

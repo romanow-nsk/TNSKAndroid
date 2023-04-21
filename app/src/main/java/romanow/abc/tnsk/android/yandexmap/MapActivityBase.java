@@ -1,5 +1,6 @@
 package romanow.abc.tnsk.android.yandexmap;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -9,15 +10,18 @@ import android.widget.LinearLayout;
 import com.yandex.mapkit.Animation;
 import com.yandex.mapkit.MapKitFactory;
 import com.yandex.mapkit.geometry.Point;
+import com.yandex.mapkit.geometry.Polyline;
 import com.yandex.mapkit.map.CameraPosition;
 import com.yandex.mapkit.map.MapObject;
 import com.yandex.mapkit.map.MapObjectCollection;
 import com.yandex.mapkit.map.MapObjectTapListener;
 import com.yandex.mapkit.map.PlacemarkMapObject;
+import com.yandex.mapkit.map.PolylineMapObject;
 import com.yandex.mapkit.mapview.MapView;
 import com.yandex.runtime.image.ImageProvider;
 import com.yandex.runtime.ui_view.ViewProvider;
 
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 import romanow.abc.tnsk.android.R;
@@ -29,7 +33,7 @@ import romanow.abc.tnsk.android.service.BaseActivity;
  * This is a basic example that displays a map and sets camera focus on the target location.
  * Note: When working on your projects, remember to request the required permissions.
  */
-public class MapActivity340 extends BaseActivity {
+public class MapActivityBase extends BaseActivity {
     protected MapObjectCollection mapObjects;
     protected int wx=800,wy=600;
     protected int zoom=20;
@@ -132,6 +136,7 @@ public class MapActivity340 extends BaseActivity {
                 }
             });
         }
+    //--------------------------------------------------------------------------------------------------------------------------------
     protected PlacemarkMapObject paint(final String text,GPSPoint geo,int icon,boolean moveTo, final int idx, final I_MapSelect back){
         if (!geo.gpsValid())
             return null;
@@ -155,7 +160,34 @@ public class MapActivity340 extends BaseActivity {
             });
         if (moveTo) moveTo(gp);
         return circle;
-    }
+        }
+    //--------------------------------------------------------------------------------------------------------------------------------
+    protected PolylineMapObject paint(final String text, ArrayList<GPSPoint> geo, int icon, boolean moveTo, final int idx, final I_MapSelect back){
+        ArrayList<Point> polylinePoints = new ArrayList<>();
+        for(GPSPoint gps : geo){
+            if (!gps.gpsValid())
+                continue;
+            polylinePoints.add(new Point(gps.geoy(),gps.geox()));
+            }
+        GPSPoint gps0 = geo.get(0);
+        Point gp=new Point(gps0.geoy(),gps0.geox());
+        final PolylineMapObject polyline = mapObjects.addPolyline(new Polyline(polylinePoints));
+        polyline.setStrokeColor(Color.BLUE);
+        polyline.setStrokeWidth(2);
+        polyline.setZIndex(5.0f);
+        polyline.addTapListener(new MapObjectTapListener() {
+            @Override
+            public boolean onMapObjectTap(MapObject mapObject, Point point) {
+                popupText(point, text);
+                if (back!=null)
+                    back.onSelect(idx);
+                return true;
+                }
+            });
+        if (moveTo) moveTo(gp);
+        return polyline;
+        }
+    //---------------------------------------------------------------------------------------------------------------------------------
     public void onMyCreate(){}          // Отложенные действия
     //----------------------------------------------------------------------------------
     @Override

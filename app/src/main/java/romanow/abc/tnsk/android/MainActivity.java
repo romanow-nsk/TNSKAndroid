@@ -58,6 +58,7 @@ import romanow.abc.tnsk.android.menu.MICareSearch;
 import romanow.abc.tnsk.android.menu.MICareStory;
 import romanow.abc.tnsk.android.menu.MILogin;
 import romanow.abc.tnsk.android.menu.MIPassenger;
+import romanow.abc.tnsk.android.menu.MIRoutes;
 import romanow.abc.tnsk.android.service.AppData;
 import romanow.abc.tnsk.android.service.Base64Coder;
 import romanow.abc.tnsk.android.service.BaseActivity;
@@ -643,6 +644,12 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
                 new MIPassenger(MainActivity.this);
             }
             });
+        menuList.add(new MenuItemAction("Маршруты") {
+            @Override
+            public void onSelect() {
+                new MIRoutes(MainActivity.this);
+            }
+        });
         menuList.add(new MenuItemAction("Очистить ленту") {
             @Override
             public void onSelect() {

@@ -23,7 +23,27 @@ public class AppSettings {
     private boolean technicianMode=false;       // Полнофункциональный режим
     private int searchCareDistantion=1000;      // Радиус поиска бортов
     private int passengerStoryHours=2;          // Интервал сохранения истории пассажира
+    private int routeDistance=30;               // отклонение от маршрута (длина перпендикуляра)
+    private double carePassDistance=100;        // расстояние между бротом и пассажиром ПО ДЛИНЕ МАРШРУТА
+    private double speedDiff=10;                // разность скоростей борта и пассажира
+    private double speedMax=10;                 //максимальная скорость пешком
     //--------------------------------------------------------------------------------------------
+    public int getRouteDistance() {
+        return routeDistance; }
+    public void setRouteDistance(int routeDistance) {
+        this.routeDistance = routeDistance; }
+    public double getCarePassDistance() {
+        return carePassDistance; }
+    public void setCarePassDistance(double carePassDistance) {
+        this.carePassDistance = carePassDistance; }
+    public double getSpeedDiff() {
+        return speedDiff; }
+    public void setSpeedDiff(double speedDiff) {
+        this.speedDiff = speedDiff; }
+    public double getSpeedMax() {
+        return speedMax; }
+    public void setSpeedMax(double speedMax) {
+        this.speedMax = speedMax; }
     public int getPassengerStoryHours() {
         return passengerStoryHours; }
     public void setPassengerStoryHours(int passengerStoryHours) {

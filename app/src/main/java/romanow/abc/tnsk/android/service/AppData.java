@@ -6,6 +6,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 
+import org.apache.poi.ss.formula.functions.T;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -17,6 +19,7 @@ import romanow.abc.core.entity.WorkSettings;
 import romanow.abc.core.entity.server.TCare;
 import romanow.abc.core.entity.server.TPassenger;
 import romanow.abc.core.entity.server.TPassengerPoint;
+import romanow.abc.core.entity.subjectarea.TRoute;
 import romanow.abc.tnsk.android.FileDescriptionList;
 import romanow.abc.tnsk.android.R;
 import romanow.abc.core.API.RestAPIBase;
@@ -39,6 +42,12 @@ public class AppData extends Application {
     public final static int CKeepALiveTime=10;     // Интервал времени проверки соединения
     public final static int MapStartDelay=5;       // Задержка старта карты (чтобы передавать события)
     public final static double ScreenMas=0.9;
+    public final static int GPSModeNone=0;
+    public final static int GPSModeFirst=1;
+    public final static int GPSModeNext=2;
+    public final static int GPSModeLast=3;
+    public final static int GPSModeRoute=4;
+    public final static int GPSModePassenger=5;
     //---------------------------------------------------------------------------------------------
     public final static int CStateGray=0;          // Состояние соединения не определено
     public final static int CStateRed=1;           // Нет соединения
@@ -115,8 +124,11 @@ public class AppData extends Application {
     private RestAPI service2 = null;                            // API NskGorTrans
     private HashMap<Integer, ConstValue> careTypeMap;           // Типы ТС
     private EntityRefList<TCare> cares = new EntityRefList<>(); // Выбранные борта
+    private TRoute route = new TRoute();                        // Выбранный маршрут
     private int cState = AppData.CStateGray;                    // Состояние соединения
     //---------------------------------------------------------------------------------
+    public TRoute route(){ return route; }
+    public void route(TRoute route0) { route = route0; }
     public TPassenger passenger(){ return passenger; }
     public void passenger(TPassenger passenger1) { passenger = passenger1; }
     public WorkSettings workSettings(){ return workSettings; }
@@ -231,6 +243,19 @@ public class AppData extends Application {
         intent.putExtra("mes",mes);
         context.sendBroadcast(intent);
         }
+    public void sendGPSMode(int mode,String title, int drawId){
+        Intent intent = new Intent();
+        intent.setAction(Event_GPS);
+        intent.putExtra("title",title);
+        intent.putExtra("current",false);
+        intent.putExtra("drawId",drawId);
+        intent.putExtra("gpsX",0);
+        intent.putExtra("gpsY",0);
+        intent.putExtra("state",0);
+        intent.putExtra("mode",mode);
+        intent.putExtra("moveTo",true);
+        context.sendBroadcast(intent);
+    }
     public void sendGPS(GPSPoint gpsPoint){
         Intent intent = new Intent();
         intent.setAction(Event_GPS);
@@ -243,8 +268,12 @@ public class AppData extends Application {
         context.sendBroadcast(intent);
         }
     public void sendGPS(GPSPoint gpsPoint, String title, int drawId, boolean moveTo){
+        sendGPS(gpsPoint,title,drawId,moveTo,AppData.GPSModeNone);
+        }
+    public void sendGPS(GPSPoint gpsPoint, String title, int drawId, boolean moveTo, int mode){
         Intent intent = new Intent();
         intent.setAction(Event_GPS);
+        intent.putExtra("mode",mode);
         intent.putExtra("title",title);
         intent.putExtra("current",false);
         intent.putExtra("drawId",drawId);

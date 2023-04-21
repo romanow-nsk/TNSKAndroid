@@ -44,11 +44,11 @@ public class MICareSearch extends MenuItem {
                     @Override
                     public void run() {
                         for(TCare care : cares){
-                            ctx.sendGPS(care.lastPoint().getGps(),care.getTitle(AppData.ctx().getCareTypeMap())+" "+care.lastPoint().getSpeed()+" км/ч",R.drawable.taxi,false);
+                            ctx.sendGPS(care.lastPoint().getGps(),care.getTitle(AppData.ctx().getCareTypeMap())+" "+care.lastPoint().getSpeed()+" км/ч",R.drawable.taxi_min,false);
                             }
                         TPassenger passenger = AppData.ctx().passenger();
                         for(TPassengerPoint point : passenger.getPassengerStory()){
-                            ctx.sendGPS(point.getGps(),passenger.getUser().getTitle(), point.onCare() ? R.drawable.on_care : R.drawable.on_walk,false);
+                            ctx.sendGPS(point.getGps(),passenger.getUser().getTitle()+" "+point.getGps().geoTime().timeToString(), point.isOnBoard() ? R.drawable.on_care_min : R.drawable.on_walk_min,false);
                             }
                         }
                     });
