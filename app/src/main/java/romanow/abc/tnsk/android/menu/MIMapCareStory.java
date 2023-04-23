@@ -17,9 +17,9 @@ import romanow.abc.tnsk.android.service.AppData;
 import romanow.abc.tnsk.android.service.NetBackDefault;
 import romanow.abc.tnsk.android.service.NetCall;
 
-public class MICareStory extends MenuItem {
+public class MIMapCareStory extends MenuItem {
     private AppData ctx;
-    public MICareStory(MainActivity base){
+    public MIMapCareStory(MainActivity base){
         super(base);
         ctx = AppData.ctx();
         AppSettings set = ctx.loginSettings();
@@ -66,9 +66,12 @@ public class MICareStory extends MenuItem {
             new NetCall<TCare>().call(main,ctx.getService2().getCareStory(set.getSessionToken(),care.getCareKey()), new NetBackDefault<TCare>(){
                 @Override
                 public void onSuccess(final TCare care1) {
+                    ctx.setCare(care1);
                     startMap(new Runnable() {
                         @Override
                         public void run() {
+                            ctx.sendGPSMode(AppData.GPSModeCareStory,"",0);
+                            /* ----------- Точки через broadcast
                             int idx=1;
                             int size= care1.getCareStory().size();
                             for(TCarePoint point : care1.getCareStory()){
@@ -76,6 +79,7 @@ public class MICareStory extends MenuItem {
                                         idx==size ? R.drawable.taxi_min : R.drawable.where, idx==size);
                                 idx++;
                                 }
+                             */
                             }
                         });
                     }

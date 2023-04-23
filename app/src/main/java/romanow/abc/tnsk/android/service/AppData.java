@@ -20,6 +20,7 @@ import romanow.abc.core.entity.server.TCare;
 import romanow.abc.core.entity.server.TPassenger;
 import romanow.abc.core.entity.server.TPassengerPoint;
 import romanow.abc.core.entity.subjectarea.TRoute;
+import romanow.abc.core.entity.subjectarea.TSegment;
 import romanow.abc.tnsk.android.FileDescriptionList;
 import romanow.abc.tnsk.android.R;
 import romanow.abc.core.API.RestAPIBase;
@@ -48,6 +49,9 @@ public class AppData extends Application {
     public final static int GPSModeLast=3;
     public final static int GPSModeRoute=4;
     public final static int GPSModePassenger=5;
+    public final static int GPSModeCareStory=6;
+    public final static int GPSModeCaresNearest=7;
+    public final static int GPSModeSegments=8;
     //---------------------------------------------------------------------------------------------
     public final static int CStateGray=0;          // Состояние соединения не определено
     public final static int CStateRed=1;           // Нет соединения
@@ -125,8 +129,14 @@ public class AppData extends Application {
     private HashMap<Integer, ConstValue> careTypeMap;           // Типы ТС
     private EntityRefList<TCare> cares = new EntityRefList<>(); // Выбранные борта
     private TRoute route = new TRoute();                        // Выбранный маршрут
+    private TCare care = new TCare();                           // Выбранный борт
+    private EntityRefList<TSegment> segments = new EntityRefList<>();
     private int cState = AppData.CStateGray;                    // Состояние соединения
     //---------------------------------------------------------------------------------
+    public EntityRefList<TSegment> getSegments() { return segments; }
+    public void setSegments(EntityRefList<TSegment> segments) { this.segments = segments; }
+    public TCare getCare() {  return care; }
+    public void setCare(TCare care) { this.care = care; }
     public TRoute route(){ return route; }
     public void route(TRoute route0) { route = route0; }
     public TPassenger passenger(){ return passenger; }
@@ -267,10 +277,10 @@ public class AppData extends Application {
         intent.putExtra("state",gpsPoint.state());
         context.sendBroadcast(intent);
         }
-    public void sendGPS(GPSPoint gpsPoint, String title, int drawId, boolean moveTo){
-        sendGPS(gpsPoint,title,drawId,moveTo,AppData.GPSModeNone);
+    public void sendGPS(String title, GPSPoint gpsPoint, int drawId, boolean moveTo){
+        sendGPS(title,gpsPoint,drawId,moveTo,AppData.GPSModeNone);
         }
-    public void sendGPS(GPSPoint gpsPoint, String title, int drawId, boolean moveTo, int mode){
+    public void sendGPS(String title, GPSPoint gpsPoint,  int drawId, boolean moveTo, int mode){
         Intent intent = new Intent();
         intent.setAction(Event_GPS);
         intent.putExtra("mode",mode);

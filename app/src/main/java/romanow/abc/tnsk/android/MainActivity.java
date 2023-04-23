@@ -54,11 +54,12 @@ import romanow.abc.core.entity.baseentityes.JInt;
 import romanow.abc.core.utils.GPSPoint;
 import romanow.abc.core.utils.Pair;
 
-import romanow.abc.tnsk.android.menu.MICareSearch;
-import romanow.abc.tnsk.android.menu.MICareStory;
+import romanow.abc.tnsk.android.menu.MIMapCareNearest;
+import romanow.abc.tnsk.android.menu.MIMapCareStory;
 import romanow.abc.tnsk.android.menu.MILogin;
-import romanow.abc.tnsk.android.menu.MIPassenger;
-import romanow.abc.tnsk.android.menu.MIRoutes;
+import romanow.abc.tnsk.android.menu.MIMapPassenger;
+import romanow.abc.tnsk.android.menu.MIMapRoutes;
+import romanow.abc.tnsk.android.menu.MIMapSegments;
 import romanow.abc.tnsk.android.service.AppData;
 import romanow.abc.tnsk.android.service.Base64Coder;
 import romanow.abc.tnsk.android.service.BaseActivity;
@@ -629,27 +630,33 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
         menuList.add(new MenuItemAction("Ближайшие на карте") {
             @Override
             public void onSelect() {
-                new MICareSearch(MainActivity.this);
+                new MIMapCareNearest(MainActivity.this);
             }
             });
         menuList.add(new MenuItemAction("История борта") {
             @Override
             public void onSelect() {
-                new MICareStory(MainActivity.this);
+                new MIMapCareStory(MainActivity.this);
             }
             });
         menuList.add(new MenuItemAction("Привязка к пассажиру") {
             @Override
             public void onSelect() {
-                new MIPassenger(MainActivity.this);
+                new MIMapPassenger(MainActivity.this);
             }
             });
         menuList.add(new MenuItemAction("Маршруты") {
             @Override
             public void onSelect() {
-                new MIRoutes(MainActivity.this);
+                new MIMapRoutes(MainActivity.this);
             }
-        });
+            });
+        menuList.add(new MenuItemAction("Сегменты") {
+            @Override
+            public void onSelect() {
+                new MIMapSegments(MainActivity.this);
+            }
+            });
         menuList.add(new MenuItemAction("Очистить ленту") {
             @Override
             public void onSelect() {

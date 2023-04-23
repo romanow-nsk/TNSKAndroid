@@ -18,9 +18,9 @@ import romanow.abc.tnsk.android.service.AppData;
 import romanow.abc.tnsk.android.service.NetBackDefault;
 import romanow.abc.tnsk.android.service.NetCall;
 
-public class MIPassenger extends MenuItem {
+public class MIMapPassenger extends MenuItem {
     private AppData ctx;
-    public MIPassenger(MainActivity base){
+    public MIMapPassenger(MainActivity base){
         super(base);
         ctx = AppData.ctx();
         AppSettings set = ctx.loginSettings();
@@ -67,6 +67,7 @@ public class MIPassenger extends MenuItem {
             new NetCall<TCare>().call(main,ctx.getService2().getCareStory(set.getSessionToken(),care.getCareKey()), new NetBackDefault<TCare>(){
                 @Override
                 public void onSuccess(final TCare care1) {
+                    //----------- Данные в ctx.passenger()
                     ErrorList fin = care.searchInRoute2(ctx.passenger(),set.getRouteDistance(),set.getCarePassDistance(),set.getSpeedDiff(),set.getSpeedMax());
                     main.addToLog(fin.toString());
                     main.addToLog(ctx.passenger().getRouteInfo().toString());

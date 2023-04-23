@@ -8,6 +8,9 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
+import romanow.abc.core.entity.EntityRefList;
+import romanow.abc.core.entity.server.TCare;
+import romanow.abc.core.entity.server.TCarePoint;
 import romanow.abc.core.entity.server.TPassenger;
 import romanow.abc.core.entity.server.TPassengerPoint;
 import romanow.abc.core.entity.subjectarea.TRoute;
@@ -36,6 +39,8 @@ public class TNSKMapActivity extends MapActivityBase {
             gps.state(state);
             boolean moveTo = intent.getBooleanExtra("moveTo",false);
             int mode = intent.getIntExtra("mode",AppData.GPSModeNone);
+            AppData ctx = AppData.ctx();
+            TPassenger passenger=null;
             switch (mode){
                 case AppData.GPSModeNone:
                     paint(title,gps,drawId,moveTo);
@@ -68,8 +73,19 @@ public class TNSKMapActivity extends MapActivityBase {
                         idx++;
                         }
                     break;
+                case AppData.GPSModeSegments:
+                    EntityRefList<TSegment> segments = ctx.getSegments();
+                    for(idx=0; idx<segments.size();idx++) {
+                        TSegment segment = segments.get(idx);
+                        points = new ArrayList<>();
+                        for (int i = 0; i < segment.getPoints().size(); i++) {
+                            points.add(segment.getPoints().get(i).getGps());
+                            }
+                        paint("Сегмент "+idx, points, drawId, false, 0, null);
+                        }
+                    break;
                 case AppData.GPSModePassenger:
-                    TPassenger passenger = AppData.ctx().passenger();
+                    passenger = AppData.ctx().passenger();
                     int size= passenger.getPassengerStory().size();
                     idx=0;
                     for(TPassengerPoint point : passenger.getPassengerStory()){
@@ -78,8 +94,27 @@ public class TNSKMapActivity extends MapActivityBase {
                         idx++;
                         }
                     break;
+                case AppData.GPSModeCaresNearest:
+                    for(TCare care : ctx.getCares()){
+                        paint(care.getTitle(AppData.ctx().getCareTypeMap())+" "+care.lastPoint().getSpeed()+" км/ч",care.lastPoint().getGps(),R.drawable.taxi_min,false);
+                        }
+                    passenger = AppData.ctx().passenger();
+                    for(TPassengerPoint point : passenger.getPassengerStory()){
+                        paint(passenger.getUser().getTitle()+" "+point.getGps().geoTime().timeToString(), point.getGps(),point.isOnBoard() ? R.drawable.on_care_min : R.drawable.on_walk_min,false);
+                        }
+                    break;
+                case AppData.GPSModeCareStory:
+                    TCare care = ctx.getCare();
+                    idx=1;
+                    size= care.getCareStory().size();
+                    for(TCarePoint point : care.getCareStory()){
+                        paint(care.getTitle(AppData.ctx().getCareTypeMap())+" "+point.getSpeed()+" км/ч "+point.getGps().geoTime().timeToString(),
+                                point.getGps(),idx==size ? R.drawable.taxi_min : R.drawable.where, idx==size);
+                        idx++;
+                        }
+                    break;
+                    }
                 }
-            }
         };
     @Override
     public void onStart() {

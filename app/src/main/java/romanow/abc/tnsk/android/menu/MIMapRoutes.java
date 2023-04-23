@@ -28,9 +28,9 @@ import romanow.abc.tnsk.android.service.AppData;
 import romanow.abc.tnsk.android.service.NetBackDefault;
 import romanow.abc.tnsk.android.service.NetCall;
 
-public class MIRoutes extends MenuItem {
+public class MIMapRoutes extends MenuItem {
     private AppData ctx;
-    public MIRoutes(MainActivity base){
+    public MIMapRoutes(MainActivity base){
         super(base);
         ctx = AppData.ctx();
         AppSettings set = ctx.loginSettings();
@@ -79,7 +79,7 @@ public class MIRoutes extends MenuItem {
                     public void run() {
                         ctx.route(route);                       // Через AppData
                         ctx.sendGPSMode(AppData.GPSModeRoute,title,R.drawable.where);
-                        /*------------------ Передача по отдельности ------------------------------
+                        /*------------------  Точки через broadcast
                         for(TRouteStop stop : route.getStops()){
                             TStop  stop2 = stop.getStop().getRef();
                             ctx.sendGPS(stop2.getGps(),stop2.getName(),R.drawable.busstop_min,false);

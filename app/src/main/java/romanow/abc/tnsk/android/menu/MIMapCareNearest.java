@@ -12,9 +12,9 @@ import romanow.abc.tnsk.android.service.AppData;
 import romanow.abc.tnsk.android.service.NetBackDefault;
 import romanow.abc.tnsk.android.service.NetCall;
 
-public class MICareSearch extends MenuItem {
+public class MIMapCareNearest extends MenuItem {
     private AppData ctx;
-    public MICareSearch(MainActivity base){
+    public MIMapCareNearest(MainActivity base){
         super(base);
         ctx = AppData.ctx();
         AppSettings set = ctx.loginSettings();
@@ -43,13 +43,16 @@ public class MICareSearch extends MenuItem {
                 startMap(new Runnable() {
                     @Override
                     public void run() {
+                        ctx.sendGPSMode(AppData.GPSModeCaresNearest,"",0);
+                        /*------------------------------------- Точки через broadcast
                         for(TCare care : cares){
-                            ctx.sendGPS(care.lastPoint().getGps(),care.getTitle(AppData.ctx().getCareTypeMap())+" "+care.lastPoint().getSpeed()+" км/ч",R.drawable.taxi_min,false);
+                            ctx.sendGPS(care.getTitle(AppData.ctx().getCareTypeMap())+" "+care.lastPoint().getSpeed()+" км/ч",care.lastPoint().getGps(),R.drawable.taxi_min,false);
                             }
                         TPassenger passenger = AppData.ctx().passenger();
                         for(TPassengerPoint point : passenger.getPassengerStory()){
-                            ctx.sendGPS(point.getGps(),passenger.getUser().getTitle()+" "+point.getGps().geoTime().timeToString(), point.isOnBoard() ? R.drawable.on_care_min : R.drawable.on_walk_min,false);
+                            ctx.sendGPS(passenger.getUser().getTitle()+" "+point.getGps().geoTime().timeToString(),point.getGps(), point.isOnBoard() ? R.drawable.on_care_min : R.drawable.on_walk_min,false);
                             }
+                        */
                         }
                     });
                 }
