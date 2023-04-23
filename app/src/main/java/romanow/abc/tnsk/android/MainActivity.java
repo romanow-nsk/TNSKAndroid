@@ -657,6 +657,12 @@ public class MainActivity extends BaseActivity {     //!!!!!!!!!!!!!!!!!!!!!!!!!
                 new MIMapSegments(MainActivity.this);
             }
             });
+        menuList.add(new MenuItemAction("Очистить статистику") {
+            @Override
+            public void onSelect() {
+                ctx.getStatList().clear();
+                }
+            });
         menuList.add(new MenuItemAction("Очистить ленту") {
             @Override
             public void onSelect() {

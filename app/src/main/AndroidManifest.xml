@@ -42,8 +42,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FullScreenGraph" android:screenOrientation="reverseLandscape"/>
+        <activity android:name=".graph.FullScreenGraph" android:screenOrientation="reverseLandscape"/>
         <activity android:name=".yandexmap.TNSKMapActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".yandexmap.TNSKMapRoutes" android:screenOrientation="portrait"/>
+        <activity android:name=".yandexmap.TNSKMapSegments" android:screenOrientation="portrait"/>
+        <activity android:name=".yandexmap.TNSKMapCareStory" android:screenOrientation="portrait"/>
+        <activity android:name=".yandexmap.TNSKMapCaresNearest" android:screenOrientation="portrait"/>
+        <activity android:name=".yandexmap.TNSKMapPassenger" android:screenOrientation="portrait"/>
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}"

@@ -17,6 +17,7 @@ import romanow.abc.tnsk.android.R;
 import romanow.abc.tnsk.android.service.AppData;
 import romanow.abc.tnsk.android.service.NetBackDefault;
 import romanow.abc.tnsk.android.service.NetCall;
+import romanow.abc.tnsk.android.yandexmap.TNSKMapPassenger;
 
 public class MIMapPassenger extends MenuItem {
     private AppData ctx;
@@ -71,7 +72,7 @@ public class MIMapPassenger extends MenuItem {
                     ErrorList fin = care.searchInRoute2(ctx.passenger(),set.getRouteDistance(),set.getCarePassDistance(),set.getSpeedDiff(),set.getSpeedMax());
                     main.addToLog(fin.toString());
                     main.addToLog(ctx.passenger().getRouteInfo().toString());
-                    startMap(new Runnable() {
+                    startMap(TNSKMapPassenger.class,new Runnable() {
                         @Override
                         public void run() {
                             ctx.sendGPSMode(AppData.GPSModePassenger,"",0);

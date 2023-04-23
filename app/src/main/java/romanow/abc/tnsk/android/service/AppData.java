@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import romanow.abc.core.API.RestAPI;
+import romanow.abc.core.Pair;
 import romanow.abc.core.constants.ConstValue;
 import romanow.abc.core.constants.Values;
 import romanow.abc.core.entity.EntityRefList;
@@ -19,6 +20,7 @@ import romanow.abc.core.entity.WorkSettings;
 import romanow.abc.core.entity.server.TCare;
 import romanow.abc.core.entity.server.TPassenger;
 import romanow.abc.core.entity.server.TPassengerPoint;
+import romanow.abc.core.entity.server.TSegmentStatistic;
 import romanow.abc.core.entity.subjectarea.TRoute;
 import romanow.abc.core.entity.subjectarea.TSegment;
 import romanow.abc.tnsk.android.FileDescriptionList;
@@ -131,8 +133,11 @@ public class AppData extends Application {
     private TRoute route = new TRoute();                        // Выбранный маршрут
     private TCare care = new TCare();                           // Выбранный борт
     private EntityRefList<TSegment> segments = new EntityRefList<>();
+    private ArrayList<Pair<String, TSegmentStatistic>> statList = new ArrayList<>();
     private int cState = AppData.CStateGray;                    // Состояние соединения
     //---------------------------------------------------------------------------------
+    public ArrayList<Pair<String, TSegmentStatistic>> getStatList() {  return statList; }
+    public void setStatList(ArrayList<Pair<String, TSegmentStatistic>> statList) { this.statList = statList; }
     public EntityRefList<TSegment> getSegments() { return segments; }
     public void setSegments(EntityRefList<TSegment> segments) { this.segments = segments; }
     public TCare getCare() {  return care; }
@@ -242,8 +247,8 @@ public class AppData extends Application {
         }
 
     public void sendPopup(int drawId, boolean error, boolean popup, boolean tolog, String mes){
-        if (!canSendPopup)
-            return;
+        //if (!canSendPopup)
+        //    return;
         Intent intent = new Intent();
         intent.setAction(Event_Popup);
         intent.putExtra("error",error);

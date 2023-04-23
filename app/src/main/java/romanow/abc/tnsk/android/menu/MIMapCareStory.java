@@ -16,6 +16,7 @@ import romanow.abc.tnsk.android.R;
 import romanow.abc.tnsk.android.service.AppData;
 import romanow.abc.tnsk.android.service.NetBackDefault;
 import romanow.abc.tnsk.android.service.NetCall;
+import romanow.abc.tnsk.android.yandexmap.TNSKMapCareStory;
 
 public class MIMapCareStory extends MenuItem {
     private AppData ctx;
@@ -67,7 +68,7 @@ public class MIMapCareStory extends MenuItem {
                 @Override
                 public void onSuccess(final TCare care1) {
                     ctx.setCare(care1);
-                    startMap(new Runnable() {
+                    startMap(TNSKMapCareStory.class,new Runnable() {
                         @Override
                         public void run() {
                             ctx.sendGPSMode(AppData.GPSModeCareStory,"",0);

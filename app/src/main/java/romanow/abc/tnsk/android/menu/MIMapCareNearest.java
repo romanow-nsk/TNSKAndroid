@@ -11,6 +11,7 @@ import romanow.abc.tnsk.android.R;
 import romanow.abc.tnsk.android.service.AppData;
 import romanow.abc.tnsk.android.service.NetBackDefault;
 import romanow.abc.tnsk.android.service.NetCall;
+import romanow.abc.tnsk.android.yandexmap.TNSKMapCaresNearest;
 
 public class MIMapCareNearest extends MenuItem {
     private AppData ctx;
@@ -40,7 +41,7 @@ public class MIMapCareNearest extends MenuItem {
                     base.addToLog(care.toStringFull(ctx.getCareTypeMap()));
                     }
                 ctx.setCares(cares);
-                startMap(new Runnable() {
+                startMap(TNSKMapCaresNearest.class,new Runnable() {
                     @Override
                     public void run() {
                         ctx.sendGPSMode(AppData.GPSModeCaresNearest,"",0);

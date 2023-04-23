@@ -27,6 +27,7 @@ import romanow.abc.tnsk.android.R;
 import romanow.abc.tnsk.android.service.AppData;
 import romanow.abc.tnsk.android.service.NetBackDefault;
 import romanow.abc.tnsk.android.service.NetCall;
+import romanow.abc.tnsk.android.yandexmap.TNSKMapRoutes;
 
 public class MIMapRoutes extends MenuItem {
     private AppData ctx;
@@ -74,7 +75,7 @@ public class MIMapRoutes extends MenuItem {
                 route0.getOid()), new NetBackDefault<TRoute>(){
             @Override
             public void onSuccess(final TRoute route) {
-                startMap(new Runnable() {
+                startMap(TNSKMapRoutes.class,new Runnable() {
                     @Override
                     public void run() {
                         ctx.route(route);                       // Через AppData

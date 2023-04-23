@@ -21,6 +21,7 @@ import romanow.abc.tnsk.android.R;
 import romanow.abc.tnsk.android.service.AppData;
 import romanow.abc.tnsk.android.service.NetBackDefault;
 import romanow.abc.tnsk.android.service.NetCall;
+import romanow.abc.tnsk.android.yandexmap.TNSKMapSegments;
 
 public class MIMapSegments extends MenuItem {
     private AppData ctx;
@@ -36,7 +37,7 @@ public class MIMapSegments extends MenuItem {
             @Override
             public void onSuccess(EntityRefList<TSegment> oo) {
                 ctx.setSegments(oo);
-                startMap(new Runnable() {
+                startMap(TNSKMapSegments.class,new Runnable() {
                     @Override
                     public void run() {
                         ctx.sendGPSMode(AppData.GPSModeSegments,"",0);

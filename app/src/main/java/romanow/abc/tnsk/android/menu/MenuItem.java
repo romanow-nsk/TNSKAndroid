@@ -13,8 +13,11 @@ public class MenuItem {
         main = main0;
     }
     public void startMap(Runnable delayed){
+        startMap(TNSKMapActivity.class, delayed);
+        }
+    public void startMap(Class clazz,Runnable delayed){
         Intent intent = new Intent();
-        intent.setClass(main.getApplicationContext(), TNSKMapActivity.class);      // Стартануть карту
+        intent.setClass(main.getApplicationContext(), clazz);      // Стартануть карту
         main.startActivity(intent);
         final Handler handler = new Handler();
         handler.postDelayed(delayed,AppData.MapStartDelay*1000);
