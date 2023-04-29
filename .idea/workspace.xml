@@ -12,33 +12,19 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c654bf1e-10a9-4828-ac00-c758e0df0b54" name="Default Changelist" comment="Сегменты">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/graph/FullScreenGraph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/TNSKMapCareStory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/TNSKMapCaresNearest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/TNSKMapPassenger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/TNSKMapRoutes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/TNSKMapSegments.java" afterDir="false" />
+    <list default="true" id="c654bf1e-10a9-4828-ac00-c758e0df0b54" name="Default Changelist" comment="График статистики">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/busstop_min.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/on_care_min.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/on_walk_min.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/taxi_min.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/FullScreenGraph.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIFullScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIMapCareNearest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIMapCareNearest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIMapCareStory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIMapCareStory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIMapPassenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIMapPassenger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIMapRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIMapRoutes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIMapSegments.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MIMapSegments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MenuItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/menu/MenuItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/service/AppData.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/service/AppData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/TNSKMapActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/TNSKMapActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[YTCY9H7HT879CE69]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -89,7 +75,7 @@
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
@@ -293,13 +279,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1623228750650</updated>
-    </task>
-    <task id="LOCAL-00099" summary="fix0">
-      <created>1645607007794</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1645607007794</updated>
     </task>
     <task id="LOCAL-00100" summary="fix0">
       <created>1645608912520</created>
@@ -637,7 +616,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682224631263</updated>
     </task>
-    <option name="localTasksCounter" value="148" />
+    <task id="LOCAL-00148" summary="График статистики">
+      <created>1682231908717</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1682231908717</updated>
+    </task>
+    <option name="localTasksCounter" value="149" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -683,7 +669,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2.0.11 Косячок с permissions" />
     <MESSAGE value="2.0.12 - режим техника" />
     <MESSAGE value="2.0.13 - Отправка excel" />
     <MESSAGE value="Загрузка архитектуры" />
@@ -708,7 +693,8 @@
     <MESSAGE value="История борта" />
     <MESSAGE value="Привязка пассажира" />
     <MESSAGE value="Сегменты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сегменты" />
+    <MESSAGE value="График статистики" />
+    <option name="LAST_COMMIT_MESSAGE" value="График статистики" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -837,11 +823,6 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/MapActivityBase.java</url>
           <line>180</line>
           <option name="timeStamp" value="451" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/TNSKMapSegments.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="452" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/romanow/abc/tnsk/android/yandexmap/TNSKMapSegments.java</url>
